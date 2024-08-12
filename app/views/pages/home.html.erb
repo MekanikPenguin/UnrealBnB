@@ -1,2 +1,14 @@
 <h1> H1: Explorez nos lieux incontournables !</h1>
 <p>Je suis un container avec les différentes card-containers et cards. Les cards sont l'ensemble des <strong>offers</strong> </p>
+
+<ul>
+  <% if @offers.present? %>
+    <% @offers.each do |offer| %>
+      <li>
+        <%= link_to offer.name, offer_path(offer) %>, <%= offer.address %>,
+      </li>
+    <% end %>
+  <% else %>
+    <li>No offers available.</li>
+  <% end %>
+</ul>

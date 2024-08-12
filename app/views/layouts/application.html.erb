@@ -13,12 +13,23 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <p>Navarbar contenant le logo, et 3 boutons: "my bookings", "my offers" "avatar" </p>
+
     <hr>
     <p>Search bar: </p>
     <hr>
     <%= yield %>
     <hr>
-    <p>Je suis un footer</p>
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="footer-copyright">
+        This footer is made with <i class="fas fa-heart"></i> by Airbnb | Unreal
+      </div>
+    </div>
   </body>
 </html>
