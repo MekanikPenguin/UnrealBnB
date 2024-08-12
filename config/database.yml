@@ -78,7 +78,9 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
+  # <<: *default
+  # database: unreal_bn_b_production
+  # username: unreal_bn_b
+  # password: <%= ENV["UNREAL_BN_B_DATABASE_PASSWORD"] %>
   <<: *default
-  database: unreal_bn_b_production
-  username: unreal_bn_b
-  password: <%= ENV["UNREAL_BN_B_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
