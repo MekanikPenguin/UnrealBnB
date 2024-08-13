@@ -52,7 +52,7 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
   end
   def offer_params
-    params.require(:offer).permit(:name, :address, :price, :description)
+    params.require(:offer).permit(:name, :address, :price, :description, :image)
   end
 
 end

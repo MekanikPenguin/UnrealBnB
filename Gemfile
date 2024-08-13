@@ -75,3 +75,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# Add cloudinary database
+gem 'cloudinary', '~> 1.18.0'
+gem 'activestorage', require: false

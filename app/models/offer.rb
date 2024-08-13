@@ -1,4 +1,8 @@
 class Offer < ApplicationRecord
+
+  #cloudinary
+  has_one_attached :photo
+
   #associations
   belongs_to :user
   has_many :bookings
