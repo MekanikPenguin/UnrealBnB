@@ -30,7 +30,7 @@ class OffersController < ApplicationController
   end
 
   def update
-    @offer.user_id = 1
+    @offer.user = current_user
     if @offer.update(offer_params)
       redirect_to offer_path(@offer)
     else
