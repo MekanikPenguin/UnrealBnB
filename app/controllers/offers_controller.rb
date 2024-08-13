@@ -17,8 +17,7 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
-    # a recoder lorsque le user sera login : @offer.user = current_user
-    @offer.user_id = 1
+    @offer.user = current_user
     if @offer.save!
       redirect_to offer_path(@offer)
     else
@@ -27,6 +26,7 @@ class OffersController < ApplicationController
   end
 
   def update
+    @offer.user_id = 1
     if @offer.update(offer_params)
       redirect_to @offer
     else
@@ -36,7 +36,7 @@ class OffersController < ApplicationController
 
   def destroy
     @offer.destroy
-    redirect_to offers_url, status: :see_other
+    redirect_to root_path, status: :see_other
   end
 
   private
@@ -44,8 +44,8 @@ class OffersController < ApplicationController
   def set_offer
     @offer = Offer.find(params[:id])
   end
-
   def offer_params
     params.require(:offer).permit(:name, :address, :price, :description)
   end
+
 end
