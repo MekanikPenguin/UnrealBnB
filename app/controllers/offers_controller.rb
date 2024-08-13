@@ -17,8 +17,7 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
-    # a recoder lorsque le user sera login : @offer.user = current_user
-    @offer.user_id = 1
+    @offer.user = current_user
     if @offer.save!
       redirect_to offer_path(@offer)
     else
