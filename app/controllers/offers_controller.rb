@@ -6,6 +6,8 @@ class OffersController < ApplicationController
   end
 
   def show
+    @offer = Offer.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -37,6 +39,11 @@ class OffersController < ApplicationController
   def destroy
     @offer.destroy
     redirect_to offers_url, status: :see_other
+  end
+
+  def book
+    set_offer
+    redirect_to @offer, notice: "Offer successfully booked!"
   end
 
   private
