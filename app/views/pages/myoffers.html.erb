@@ -1,1 +1,27 @@
-MY OFFERS
+<h1>Détails de vos offres</h1>
+<%= link_to "Add an Offer", new_offer_path %>
+<p>Je suis un container avec les différentes card-containers et cards. Les cards sont l'ensemble des <strong>offers</strong> que l'user a posté.</p>
+<%= link_to "✎ Edit", "#" %>, <%= link_to "🗑️ Delete", "#" %>
+
+<div class="d-flex flex-wrap">
+  <% current_user.offers.each do |offer| %>
+    <div class="card m-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= offer.name %></h5>
+        <p class="card-text"><%= offer.description %></p>
+        <%= simple_form_for [offer], method: :delete, html: { class: 'd-inline' } do |f| %>
+          <%= f.submit 'Delete', class: 'btn btn-danger' %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+ <%# <%= link_to "Delete", offer_path(@offer),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+
+   <%# <%= link_to "Edit this offer", edit_offer_path %>
