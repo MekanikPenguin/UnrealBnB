@@ -1,27 +1,12 @@
 class BookingsController < ApplicationController
-  before_action :set_offer, only: [:destroy]
+  before_action :set_booking, only: [:destroy]
 
   def index
-    @offers = Offer.all
+    @bookings = @bookings = Booking.where(user_id: current_user.id)
   end
-
-  def new
-    @offer = Offer.new
-  end
-
-  def create
-    @offer = Offer.new(offer_params)
-
-    if @offer.save
-      redirect_to @offer
-    else
-      render :new
-    end
-  end
-
   def destroy
-    @offer.destroy
-    redirect_to offers_url, status: :see_other
+    @booking.destroy
+    redirect_to bookings_url, status: :see_other
   end
 
   private
