@@ -28,6 +28,7 @@ class OffersController < ApplicationController
   end
 
   def update
+    @offer.user_id = 1
     if @offer.update(offer_params)
       redirect_to @offer
     else
@@ -37,7 +38,7 @@ class OffersController < ApplicationController
 
   def destroy
     @offer.destroy
-    redirect_to offers_url, status: :see_other
+    redirect_to root_path, status: :see_other
   end
 
   def book
@@ -50,8 +51,8 @@ class OffersController < ApplicationController
   def set_offer
     @offer = Offer.find(params[:id])
   end
-
   def offer_params
     params.require(:offer).permit(:name, :address, :price, :description, :image)
   end
+
 end

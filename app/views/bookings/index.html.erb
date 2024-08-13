@@ -1,3 +1,22 @@
 <h1>Voici vos bookings</h1>
-<p>Je suis un container avec les différentes card-containers et cards. Les cards sont l'ensemble des <strong>bookings</strong> que l'user a book</p>
-<p>Boutons "delete" </p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom du booking</th>
+      <th>Date de début</th>
+      <th>Date de fin</th>
+      <th>Détails</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= link_to booking.offer.name, offer_path(booking.offer), class: "btn btn-primary" %></td>
+        <td><%= booking.start_date %></td>
+        <td><%= booking.end_date %></td>
+        <td><%= link_to "Détails", booking_path(booking), class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,10 +1,3 @@
 <h1>Rentrez votre nouvelle offre</h1>
- <%= simple_form_for @offer do |f| %>
-          <%= f.input :name %>
-          <%= f.input :address %>
-          <%= f.input :price %>
-          <%= f.input :photo, as: :file %>
-          <%# rajouter l'input image   <%= f.input :photo, as: :file %>
-          <%= f.input :description %>
-          <%= f.submit class: 'btn btn-flat' %>
-        <% end %>
+
+<%= render "form", offer: @offer %>

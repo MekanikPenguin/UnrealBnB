@@ -1,3 +1,5 @@
-<h1>Modifier votre offre</h1>
-<p>form: Ceci est un simple form avec : "Title", "Description", "Prix", "Start Date", "End Date", "Photo".</p>
-<p>Le form est pré-rempli</p>
+<h1>Edit <%= @offer.name %></h1>
+
+<%= render "form", offer: @offer %>
+
+<%= link_to "Back to the offers ", root_path  %>
