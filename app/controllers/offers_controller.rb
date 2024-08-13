@@ -6,6 +6,8 @@ class OffersController < ApplicationController
   end
 
   def show
+    @offer = Offer.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -17,8 +19,7 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
-    # a recoder lorsque le user sera login : @offer.user = current_user
-    @offer.user_id = 1
+    @offer.user = current_user
     if @offer.save!
       redirect_to offer_path(@offer)
     else
@@ -37,6 +38,11 @@ class OffersController < ApplicationController
   def destroy
     @offer.destroy
     redirect_to offers_url, status: :see_other
+  end
+
+  def book
+    set_offer
+    redirect_to @offer, notice: "Offer successfully booked!"
   end
 
   private
