@@ -1,19 +1,20 @@
 <div class= "container">
   <h1>Explorez nos lieux incontournables !</h1>
   <hr>
-  <div class="cards">
+  <div class="d-flex flex-wrap">
     <% if @offers.present? %>
       <% @offers.each do |offer| %>
-        <div class="card-category">
-          <ul>
-            <li>
-              <%= link_to offer.name, offer_path(offer) %>, <%= offer.address %>
-            </li>
+        <div class="card m-3" style="width: 18rem;">
+          <img src="<%= offer.image %>" class="card-img-top" alt="<%= offer.name %>">
+          <div class="card-body">
+            <h5 class="card-title"><%= offer.name %></h5>
+            <%= link_to 'Voir cette offre', offer_path(offer), class: 'btn btn-secondary' %>
+            <p class="card-text"><%= offer.description.truncate(100) %></p>
+          </div>
         </div>
-        <% end %>
-        <% else %>
-          <li>No offers available.</li>
-        <% end %>
-    </ul>
+      <% end %>
+    <% else %>
+      <p>No offers available.</p>
+    <% end %>
   </div>
 </div>

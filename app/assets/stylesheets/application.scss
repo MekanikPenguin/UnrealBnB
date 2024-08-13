@@ -10,3 +10,39 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  padding-top: 56px;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.card {
+  margin: 2rem;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  padding: 10px;
+}
+
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card-text{
+  margin: 10px;
+}
