@@ -16,6 +16,12 @@ class OffersController < ApplicationController
 
   def show
     @booking = Booking.new
+    @offer = Offer.find(params[:id])
+    @markers = [{
+      lat: @offer.latitude,
+      lng: @offer.longitude,
+      info_window_html: render_to_string(partial: "info_window", locals: { offer: @offer })
+    }]
   end
 
   def new
@@ -61,5 +67,4 @@ class OffersController < ApplicationController
   def offer_params
     params.require(:offer).permit(:name, :address, :price, :description, :image)
   end
-
 end
