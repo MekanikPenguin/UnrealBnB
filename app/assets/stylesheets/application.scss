@@ -10,6 +10,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/cards";
+
 
 body {
   padding-top: 56px;
@@ -27,15 +29,7 @@ body {
   margin-top: 20px;
 }
 
-.card {
-  margin: 2rem;
-}
 
-.card-img-top {
-  height: 200px;
-  object-fit: cover;
-  padding: 10px;
-}
 
 .d-flex {
   display: flex;
