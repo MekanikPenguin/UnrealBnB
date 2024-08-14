@@ -1,4 +1,4 @@
-<div class="map" style="background-image: url('<%= @offer.image %>')"></div>
+<div class="map" style="background-image: url('<%= @offer.image.attached? ? cl_image_path(@offer.image.key) : @offer.url_image %>')"></div>
 
 <div class="container margin-top-negative">
   <div class="row">

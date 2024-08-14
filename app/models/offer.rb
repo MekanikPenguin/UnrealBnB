@@ -1,7 +1,7 @@
 class Offer < ApplicationRecord
 
   # cloudinary
-  has_one_attached :photo
+  has_one_attached :image
 
   # associations
   belongs_to :user
@@ -12,4 +12,8 @@ class Offer < ApplicationRecord
   validates :address, presence: true
   validates :description, presence: true
   validates :user_id, presence: true
+
+  # geocoding
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

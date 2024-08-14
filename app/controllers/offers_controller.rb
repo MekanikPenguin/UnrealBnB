@@ -1,13 +1,21 @@
 class OffersController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
     @offers = Offer.all
+    @markers = @offers.geocoded.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { offer: offer })
+      }
+    end
   end
 
   def show
-    @offer = Offer.find(params[:id])
     @booking = Booking.new
   end
 
@@ -29,7 +37,6 @@ class OffersController < ApplicationController
   end
 
   def update
-    @offer.user = current_user
     if @offer.update(offer_params)
       redirect_to offer_path(@offer)
     else
