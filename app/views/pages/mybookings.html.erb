@@ -8,7 +8,7 @@
     <div class="card m-3" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title"><%= booking.offer.name %></h5>
-        <img src="<%= booking.offer.image %>" class="card-img-top" alt="<%= booking.offer.name %>">
+        <img src="<%= offer.image.attached? ? cl_image_path(offer.image.key) : offer.url_image %>" class="card-img-top" alt="<%= booking.offer.name %>">
         <p class="card-text mb-2">Date de la réservation</p>
         <p class="card-text mb-2"> Début : <%= booking.start_date %></p>
         <p class="card-text mb-2"> Fin : <%= booking.end_date %></p>
