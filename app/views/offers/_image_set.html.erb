@@ -1,0 +1,7 @@
+<%= if item.image.attached?
+      cl_image_path(item.image.key)
+    elsif item.url_image.nil?
+      "https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    else
+      item.url_image.strip
+end %>
