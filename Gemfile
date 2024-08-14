@@ -78,4 +78,4 @@ end
 
 # Add cloudinary database
 gem 'cloudinary', '~> 1.18.0'
-gem 'activestorage', require: false
+gem 'activestorage'

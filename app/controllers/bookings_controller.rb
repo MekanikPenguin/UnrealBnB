@@ -1,14 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:destroy]
-
-  def index
-    @bookings = Booking.where(user_id: current_user.id)
-  end
-
-  def new
-    @booking = Booking.new
-  end
-
+  before_action :authenticate_user!, only: [:create, :destroy]
+  before_action :authorize_user!, only: [:destroy]
   def create
     @user = current_user
     puts "user est: #{@user}"
