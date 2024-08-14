@@ -10,3 +10,13 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-text-center-custom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-text-center-custom h4 {
+  margin: 0;
+}
