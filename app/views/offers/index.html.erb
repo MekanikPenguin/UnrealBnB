@@ -5,7 +5,13 @@
     <% if @offers.present? %>
       <% @offers.each do |offer| %>
         <div class="card m-3" style="width: 18rem;">
-          <img src="<%= render 'offers/image_set', item: offer %>"/>
+          <img src="<%= if offer.image.attached?
+                          cl_image_path(offer.image.key)
+                        elsif offer.url_image.nil?
+                          'https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                        else
+                          offer.url_image.strip
+                        end %>" alt="Offer Image"/>
           <div class="card-body">
             <h5 class="card-title"><strong><%= offer.name %></strong></h5>
             <%= link_to 'Voir cette offre', offer_path(offer), class: 'btn btn-outline-primary rounded-pill' %>
