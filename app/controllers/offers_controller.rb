@@ -1,12 +1,14 @@
 class OffersController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
     @offers = Offer.all
   end
 
   def show
-    @offer = Offer.find(params[:id])
     @booking = Booking.new
   end
 
@@ -28,9 +30,8 @@ class OffersController < ApplicationController
   end
 
   def update
-    @offer.user_id = 1
     if @offer.update(offer_params)
-      redirect_to @offer
+      redirect_to offer_path(@offer)
     else
       render :edit
     end
@@ -38,7 +39,7 @@ class OffersController < ApplicationController
 
   def destroy
     @offer.destroy
-    redirect_to root_path, status: :see_other
+    redirect_to myoffers_path, status: :see_other
   end
 
   def book

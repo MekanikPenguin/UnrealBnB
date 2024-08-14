@@ -1,20 +1,23 @@
+<div class="text-center">
 <h1>Détails de vos offres</h1>
-<%= link_to "Add an Offer", new_offer_path %>
-<p>Je suis un container avec les différentes card-containers et cards. Les cards sont l'ensemble des <strong>offers</strong> que l'user a posté.</p>
-<%= link_to "✎ Edit", "#" %>, <%= link_to "🗑️ Delete", "#" %>
-
+<p><%= link_to "Ajouter une nouvelle location", new_offer_path, class: "btn btn-primary link-underline link-underline-opacity-0 mb-3" %></p>
+</div>
 <div class="d-flex flex-wrap">
+<div class="row row-cols-1 row-cols-md-2 g-4">
   <% current_user.offers.each do |offer| %>
     <div class="card m-3" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title"><%= offer.name %></h5>
-        <p class="card-text"><%= offer.description %></p>
-        <%= simple_form_for [offer], method: :delete, html: { class: 'd-inline' } do |f| %>
-          <%= f.submit 'Delete', class: 'btn btn-danger' %>
-        <% end %>
+        <img src="<%= offer.image %>" class="card-img-top" alt="<%= offer.name %>">
+        <p class="card-text mb-2"><%= offer.description %></p>
+        <div class="d-flex justify-content-between">
+        <%= link_to 'Edit', edit_offer_path(offer), class: 'btn btn-danger' %>
+        <%= button_to 'Delete', offer_path(offer), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </div>
       </div>
     </div>
   <% end %>
+</div>
 </div>
 
 

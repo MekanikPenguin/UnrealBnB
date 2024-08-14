@@ -1,13 +1,13 @@
 class Offer < ApplicationRecord
 
-  #cloudinary
-  has_one_attached :photo
+  # cloudinary
+  has_one_attached :image
 
-  #associations
+  # associations
   belongs_to :user
   has_many :bookings
 
-  #validations
+  # validations
   validates :name, presence: true, uniqueness: true
   validates :address, presence: true
   validates :description, presence: true
