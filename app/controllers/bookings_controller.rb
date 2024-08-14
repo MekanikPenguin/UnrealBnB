@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:destroy]
   before_action :authenticate_user!, only: [:create, :destroy]
   before_action :authorize_user!, only: [:destroy]
+  
   def create
     @user = current_user
     puts "user est: #{@user}"
