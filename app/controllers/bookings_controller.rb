@@ -1,5 +1,22 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:destroy]
+  before_action :authenticate_user!, only: [:create, :destroy]
+  before_action :authorize_user!, only: [:destroy]
+  def create
+    @user = current_user
+    puts "user est: #{@user}"
+    @offer = Offer.find_by(params[:id])
+    puts "offer est: #{@offer}"
+    @booking = Booking.new(booking_params)
+    @booking.user = @user
+    @booking.offer = @offer
+    if @booking.save
+      redirect_to offer_bookings_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @booking.destroy
     redirect_to bookings_url, status: :see_other
@@ -7,7 +24,7 @@ class BookingsController < ApplicationController
 
   private
 
-  def offer_params
-    params.require(:booking).permit(:start_date, :end_date)
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date, :user_id, :offer_id)
   end
 end

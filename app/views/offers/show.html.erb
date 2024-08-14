@@ -12,13 +12,11 @@
     <div class="col-4">
       <div class="offer-show-card">
         <h5>Reservation</h5>
-        <div data-controller="datepicker">
-          <%= simple_form_for [@offer, @booking], data: {controller:'datepicker'} do |f| %>
-            <%= f.input :start_date, data: {controller:'datepicker', datepicker_target: "start"}, placeholder: "select dates", as: :string %>
-            <%= f.input :end_date, data: {controller:'datepicker', datepicker_target: "end"}, placeholder: "select dates", as: :string %>
-            <%= f.submit "Book", class: "btn btn-primary", data: {controller:'datepicker', datepicker_target: "bookButton"}, disabled: true %>
+          <%= simple_form_for [@offer, @booking] do |f| %>
+            <%= f.input :start_date, input_html: {data: {controller:'datepicker', datepicker_target: "start"}, placeholder: "select dates"}, as: :string %>
+            <%= f.input :end_date, input_html: {data: {controller:'datepicker', datepicker_target: "end"}, placeholder: "select dates"}, as: :string %>
+            <%= f.submit "Book", class: "btn btn-primary" %>
           <% end %>
-        </div>
       </div>
     </div>
   </div>
