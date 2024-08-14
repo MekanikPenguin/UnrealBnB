@@ -1,5 +1,5 @@
 class Offer < ApplicationRecord
-  after_initialize :set_defaults
+  # after_initialize :set_defaults
 
   # cloudinary
   has_one_attached :image
