@@ -1,12 +1,13 @@
 class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
     @offers = Offer.all
   end
 
   def show
-    @offer = Offer.find(params[:id])
     @booking = Booking.new
   end
 
@@ -28,7 +29,6 @@ class OffersController < ApplicationController
   end
 
   def update
-    @offer.user_id = 1
     if @offer.update(offer_params)
       redirect_to @offer
     else
