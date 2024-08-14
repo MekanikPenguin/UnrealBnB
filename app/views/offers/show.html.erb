@@ -15,7 +15,7 @@
           <%= simple_form_for [@offer, @booking] do |f| %>
             <%= f.input :start_date, input_html: {data: {controller:'datepicker', datepicker_target: "start"}, placeholder: "select dates"}, as: :string %>
             <%= f.input :end_date, input_html: {data: {controller:'datepicker', datepicker_target: "end"}, placeholder: "select dates"}, as: :string %>
-            <%= f.submit "Book", class: "btn btn-primary" %>
+            <%= f.submit "Book", class: "btn btn-primary rounded" %>
           <% end %>
       </div>
     </div>
