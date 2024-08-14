@@ -78,6 +78,7 @@ end
 
 # Add cloudinary database
 gem 'cloudinary', '~> 1.18.0'
+
 gem 'activestorage', require: false
 
 # Add geocoder for map implementation

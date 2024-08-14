@@ -1,4 +1,8 @@
 class Offer < ApplicationRecord
+
+  # cloudinary
+  has_one_attached :image
+
   # associations
   belongs_to :user
   has_many :bookings
@@ -8,9 +12,6 @@ class Offer < ApplicationRecord
   validates :address, presence: true
   validates :description, presence: true
   validates :user_id, presence: true
-
-  # cloudinary
-  has_one_attached :photo
 
   # geocoding
   geocoded_by :address

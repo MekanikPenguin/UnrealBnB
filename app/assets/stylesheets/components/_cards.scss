@@ -4,6 +4,19 @@
   grid-gap: 16px;
 }
 
+.card {
+margin: 2rem;
+box-shadow: 2px 2px 3px grey
+}
+
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  padding: 10px;
+  border-radius: 15px;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
