@@ -1,7 +1,7 @@
 class Offer < ApplicationRecord
 
   # cloudinary
-  has_one_attached :photo
+  has_one_attached :image
 
   # associations
   belongs_to :user
