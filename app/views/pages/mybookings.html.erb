@@ -1,1 +1,22 @@
-MY BOOOKIINNGS
+<div class="text-center">
+<h1>Mes Réservations Imaginaires</h1>
+</div>
+<br>
+<div class="d-flex flex-wrap">
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <% current_user.bookings.each do |booking| %>
+    <div class="card m-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= booking.offer.name %></h5>
+        <img src="<%= booking.offer.image %>" class="card-img-top" alt="<%= booking.offer.name %>">
+        <p class="card-text mb-2">Date de la réservation</p>
+        <p class="card-text mb-2"> Début : <%= booking.start_date %></p>
+        <p class="card-text mb-2"> Fin : <%= booking.end_date %></p>
+        <div class="d-flex justify-content-between">
+        <%= link_to 'Voir', offer_path(booking.offer), class: 'btn btn-danger' %>
+        <%= button_to 'Annuler', offer_booking_path(booking.offer, booking), method: :delete, data: { turbo_confirm: 'Vous êtes sûr?' }, class: 'btn btn-danger' %>        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
