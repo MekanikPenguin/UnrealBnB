@@ -6,7 +6,10 @@
 // External libraries
 @import "bootstrap";
 @import "font-awesome";
+
+// Mapbox
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
+@import url("https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css");
 
 // Your CSS partials
 @import "components/index";
@@ -87,6 +90,7 @@ body {
   margin-bottom: 20px;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
   border-radius: 5px;
+  height: 300px;
 }
 
 .map {
