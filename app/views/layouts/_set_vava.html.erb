@@ -1,0 +1,14 @@
+<%= image_tag(
+      (if vava.image.attached?
+         cl_image_path(vava.image.key, crop: :crop, gravity: :face, width: 300, height: 300)
+       elsif vava.url_image.nil?
+         "https://img.freepik.com/free-photo/androgynous-avatar-non-binary-queer-person_23-2151100270.jpg?size=626&ext=jpg&ga=GA1.1.56337491.1723629018&semt=ais_hybrid"
+       else
+         vava.url_image
+       end),
+      class: "avatar dropdown-toggle",
+      id: "navbarDropdown",
+      data: { bs_toggle: "dropdown" },
+      'aria-haspopup': true,
+      'aria-expanded': false
+    ) %>

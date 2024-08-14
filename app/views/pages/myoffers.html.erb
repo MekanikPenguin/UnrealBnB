@@ -8,7 +8,7 @@
     <div class="card m-3" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title"><%= offer.name %></h5>
-        <img src="<%= offer.image.attached? ? cl_image_path(offer.image.key) : offer.url_image %>" class="card-img-top" alt="<%= offer.name %>">
+        <img src="<%= render 'offers/image_set', offer: offer %>" class="card-img-top" alt="<%= offer.name %>">
         <p class="card-text mb-2"><%= offer.description %></p>
         <div class="d-flex justify-content-between">
         <%= link_to 'Edit', edit_offer_path(offer), class: 'btn btn-outline-success' %>

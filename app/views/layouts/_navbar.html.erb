@@ -19,7 +19,7 @@
             <%= link_to "Mes offres", myoffers_path, class: "nav-link me-2" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag <%= @offer.image.attached? ? cl_image_path(@offer.image.key, crop: :crop, gravity: :face, width: 300, height: 300) : @offer.url_image %>, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= render 'layouts/set_vava', vava: current_user %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
