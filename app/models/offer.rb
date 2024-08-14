@@ -12,4 +12,8 @@ class Offer < ApplicationRecord
   validates :address, presence: true
   validates :description, presence: true
   validates :user_id, presence: true
+
+  # geocoding
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
