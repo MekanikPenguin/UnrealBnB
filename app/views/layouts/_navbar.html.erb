@@ -1,10 +1,16 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon bg-light sticky-top">
   <div class="container-fluid">
+
     <%= link_to root_path, class: "navbar-brand d-flex" do %>
       <%= image_tag 'Logo.png' %>
       <p id="Logo", class="modal-dialog modal-dialog-centered fw-medium fs-2">UnrealBnB©</p>
     <% end %>
 
+    <% if user_signed_in? %>
+      <div class="navbar-text-center-custom">
+        <h4>Bienvenue <%= current_user.username %></h4>
+      </div>
+    <%end%>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
