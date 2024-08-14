@@ -7,10 +7,10 @@
         <div class="card m-3" style="width: 18rem;">
           <img src="<%= offer.image.attached? ? cl_image_path(offer.image.key) : offer.url_image %>" class="card-img-top" alt="<%= offer.name %>">
           <div class="card-body">
-            <h5 class="card-title"><%= offer.name %></h5>
+            <h5 class="card-title"><strong><%= offer.name %></strong></h5>
             <%= link_to 'Voir cette offre', offer_path(offer), class: 'btn btn-outline-primary rounded-pill' %>
             <p class="card-text"><%= offer.description.truncate(100) %></p>
-            <p class="card-text">Hôte: <%= offer.user.username%></p>
+            <p class="card-text"><u>Hôte:</u> <%= offer.user.username%></p>
             <p class="card-text"><%= offer.price%> <i class="fa-solid fa-coins" style="color: #F4DB12;"></i></p>
           </div>
         </div>
