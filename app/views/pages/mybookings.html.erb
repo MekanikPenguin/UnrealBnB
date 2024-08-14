@@ -14,8 +14,9 @@
             <p class="card-text mb-2"> Début : <%= booking.start_date %></p>
             <p class="card-text mb-2"> Fin : <%= booking.end_date %></p>
             <div class="d-flex justify-content-between">
-            <%= link_to 'Voir', offer_path(booking.offer), class: 'btn btn-danger' %>
-            <%= button_to 'Annuler', offer_booking_path(booking.offer, booking), method: :delete, data: { turbo_confirm: 'Vous êtes sûr?' }, class: 'btn btn-danger' %>        </div>
+              <%= link_to 'Détails', offer_path(booking.offer), class: 'btn btn-outline-secondary' %>
+              <%= button_to 'Annuler', offer_booking_path(booking.offer, booking), method: :delete, data: { turbo_confirm: 'Vous êtes sûr?' }, class: 'btn btn-danger' %>
+            </div>
           </div>
         </div>
       <% end %>

@@ -14,9 +14,9 @@
             <img src="<%= offer.image.attached? ? cl_image_path(offer.image.key) : offer.url_image %>" class="card-img-top" alt="<%= offer.name %>">
             <p class="card-text mb-2"><%= offer.description %></p>
             <div class="d-flex justify-content-between">
-            <%= link_to 'Edit', edit_offer_path(offer), class: 'btn btn-outline-success' %>
-            <%= link_to 'Details', offer_path(offer), class: 'btn btn-outline-secondary' %>
-            <%= button_to 'Delete', offer_path(offer), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn-outline-danger ' %>
+            <%= link_to 'Modifier', edit_offer_path(offer), class: 'btn btn-outline-success' %>
+            <%= link_to 'Détails', offer_path(offer), class: 'btn btn-outline-secondary' %>
+            <%= button_to 'Supprimer', offer_path(offer), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn-outline-danger ' %>
             </div>
           </div>
         </div>
@@ -24,8 +24,6 @@
     </div>
   </div>
 </div>
-
-
 
  <%# <%= link_to "Delete", offer_path(@offer),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
