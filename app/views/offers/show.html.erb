@@ -5,6 +5,10 @@
     <div class="col-8">
       <div class="offer-show-card">
         <h1><%= @offer.name %></h1>
+        <p><%= @offer.description %></p>
+        <p class="price"><i class="fa-solid fa-coins" style="color: #000000;"></i><%= @offer.price %> *</p>
+        <p class="little_text"><i>* le prix n'est pas imaginaire</i></p>
+        <br>
         <p class="offer-show-address"><%= @offer.address %></p>
       </div>
     </div>
@@ -21,23 +25,9 @@
     </div>
   </div>
 
-  <div class="d-flex justify-content-between">
-    <div class="row">
-      <div class="col-8">
-        <div class="offer-show-card">
-          <h3>Un endroit de rêve...</h3>
-          <p><%= @offer.description %></p>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="offer-show-card">
-          <h3>Prix</h3>
-          <div class="flex ms-3">
-            <p class="price"> <%= @offer.price %> € *</p>
-            <br>
-            <p class="little_text"><i>* le prix n'est pas imaginaire</i></p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
