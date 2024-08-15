@@ -17,10 +17,17 @@
         <p class="fw-bold mx-3 pt-2">Hôte: <%= @offer.user.username  %> </p>
         </div>
         <p><%= @offer.description %></p>
+<<<<<<< HEAD
+        <p class="price"><i class="fa-solid fa-coins" style="color: #000000;"></i><%= @offer.price.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %> *</p>
+        <p class="little_text"><i>* le prix n'est pas imaginaire</i></p>
+        <br>
+        <p class="offer-show-address"><%= @offer.address %></p>
+=======
         <div class="d-flex justify-content-between">
         <p class="offer-show-address mb-0"><i class="fa-solid fa-location-dot fa-bounce icon-blue px-1"></i><%= @offer.address %></p>
         <p class="price mb-0"><i class="fa-solid fa-coins icon-yellow fa-beat px-1"></i><%= @offer.price %></p>
         </div>
+>>>>>>> d2ad0fe110fff5499dabeb097cbbb0dbb913dee3
       </div>
     </div>
     <div class="col-4">
@@ -34,15 +41,38 @@
       </div>
     </div>
   </div>
-  <div>Total = <%= @offer.rating %></div>
-  <% @reviews.each do | review | %>
-    <div>
-      <%= render 'layouts/set_vava', vava: review.user %>
-      <%= review.user.username %>
-      <%= review.rating %>
-      <%= review.content %>
-    </div>
-  <% end %>
+<%# commentaires %>
+  <div class="overflow-auto mb-3" style="height: 200px;">
+    <% @reviews.each do | review | %>
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex align-items-center mb-2">
+            <!-- Avatar et Nom d'utilisateur -->
+            <div class="d-flex align-items-center me-3">
+              <div class="me-2">
+                <%= render 'layouts/set_vava', vava: review.user %> <!-- Avatar du user -->
+              </div>
+              <h5 class="mb-0">
+                <%= review.user.username %> <!-- Nom d'utilisateur -->
+              </h5>
+            </div>
+
+            <!-- Évaluation (rating) -->
+            <div>
+              <span class="badge bg-primary">
+                <%= review.rating %> ★
+              </span>
+            </div>
+          </div>
+
+          <!-- Contenu de la review -->
+          <p class="card-text">
+            <%= review.content %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
   <div class="mt-5 " style="width: 100%; height: 600px;"
     data-controller="map"
