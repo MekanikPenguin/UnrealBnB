@@ -12,6 +12,10 @@
     <div class="col-8">
       <div class="offer-show-card">
         <h1><%= @offer.name %></h1>
+        <hr>
+        <p>Hôte: <%= @offer.user.username  %> </p>
+        <%= render 'layouts/set_vava', vava: @offer.user %>
+        <hr>
         <p><%= @offer.description %></p>
         <div class="d-flex justify-content-between ">
         <p class="offer-show-address mb-0"><i class="fa-solid fa-location-dot fa-bounce icon-blue px-1"></i><%= @offer.address %></p>
