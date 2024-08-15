@@ -83,3 +83,6 @@ gem 'activestorage', require: false
 
 # Add geocoder for map implementation
 gem "geocoder"
+
+#Add de PG_SEARCH
+gem "pg_search"
