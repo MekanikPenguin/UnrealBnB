@@ -13,7 +13,7 @@
       <div class="offer-show-card">
         <h1><%= @offer.name %></h1>
         <p><%= @offer.description %></p>
-        <p class="price"><i class="fa-solid fa-coins" style="color: #000000;"></i><%= @offer.price %> *</p>
+        <p class="price"><i class="fa-solid fa-coins" style="color: #000000;"></i><%= @offer.price.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %> *</p>
         <p class="little_text"><i>* le prix n'est pas imaginaire</i></p>
         <br>
         <p class="offer-show-address"><%= @offer.address %></p>

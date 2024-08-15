@@ -19,7 +19,7 @@
             <%= link_to 'Voir cette offre', offer_path(offer), class: 'btn btn-outline-info index-button-blue-green w-100 mt-auto' %>
             <div class="d-flex justify-content-between mt-3">
               <p class="card-text"><i class="fa-solid fa-house-user icon-blue-green"></i> <%= offer.user.username%></p>
-              <p class="card-text text-end"><i class="fa-solid fa-coins icon-yellow"></i> <%= offer.price%></p>
+              <p class="card-text text-end"><i class="fa-solid fa-coins icon-yellow"></i> <%= offer.price.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse%></p>
             </div>
           </div>
         </div>
