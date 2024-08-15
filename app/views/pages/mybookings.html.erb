@@ -18,13 +18,12 @@
           <p class="card-text mb-2"><u>Début :</u> <%= booking.start_date %></p>
           <p class="card-text mb-2"><u>Fin :</u> <%= booking.end_date %></p>
           <p class="card-text mb-2">
-            Statut:
             <% if booking.status == 'pending' %>
-              <i class="fa-solid fa-hourglass-half"></i> En attente de validation
+              <i class="fa-solid fa-hourglass-half text-warning"></i> En attente de validation
             <% elsif booking.status == 'accepted' %>
-              <i class="fa-solid fa-circle-check"></i> Réservation acceptée
+              <i class="fa-solid fa-circle-check text-success"></i> Réservation acceptée
             <% elsif booking.status == 'rejected' %>
-              <i class="fa-solid fa-xmark"></i> Réservation refusée
+              <i class="fa-solid fa-xmark text-danger"></i> Réservation refusée
             <% end %>
           </p>
           <div class="text-end mt-auto">
