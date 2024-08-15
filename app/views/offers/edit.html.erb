@@ -1,5 +1,7 @@
-<h1>Edit <%= @offer.name %></h1>
+<div class = "container mt-4">
+  <h1>Edit <%= @offer.name %></h1>
 
-<%= render "form", offer: @offer %>
-
-<%= link_to "Back to the offers ", root_path  %>
+  <%= render "form", offer: @offer %>
+  <hr>
+  <%= link_to "Back to Offers ", root_path  %>
+</div>

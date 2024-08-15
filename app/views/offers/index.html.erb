@@ -16,7 +16,7 @@
             <p class="card-text mb-2"><%= offer.description.truncate(100) %></p>
             <%= link_to 'Voir cette offre', offer_path(offer), class: 'btn btn-outline-info rounded-pill' %>
             <p class="card-text"><u>Hôte:</u> <%= offer.user.username%></p>
-            <p class="card-text"><%= offer.price%> <i class="fa-solid fa-coins" style="color: #F4DB12;"></i></p>
+            <p class="card-text"><%= offer.price%> <i class="fa-solid fa-coins icon-yellow"></i></p>
           </div>
         </div>
       <% end %>

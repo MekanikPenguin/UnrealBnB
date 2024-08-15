@@ -1,29 +1,28 @@
 <div class="container mt-4">
   <h1 class="mb-4">Détails de vos offres.</h1>
   <div class="d-flex flex-wrap">
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      <% current_user.offers.each do |offer| %>
-        <div class="card m-3" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title"><strong><%= offer.name %></strong></h5>
-            <%= link_to offer_path(offer) do %>
-            <img src="<%= if offer.image.attached?
-                          cl_image_path(offer.image.key)
-                        elsif offer.url_image.nil?
-                          'https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-                        else
-                          offer.url_image.strip
-                        end %>" class="card-img-top" alt="<%= offer.name %>" class="card-img-top" alt="<%= offer.name %>">
-            <% end %>
-            <p class="card-text mb-2"><%= offer.description %></p>
-            <div class="d-flex justify-content-between">
+    <% current_user.offers.each do |offer| %>
+      <div class="card m-3" style="width: 18rem; border-radius: 15px">
+          <%= link_to offer_path(offer) do %>
+          <img src="<%= if offer.image.attached?
+                        cl_image_path(offer.image.key)
+                      elsif offer.url_image.nil?
+                        'https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                      else
+                        offer.url_image.strip
+                      end %>" class="card-img-top" alt="<%= offer.name %>" style="height: 200px;">
+          <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><strong><%= offer.name %></strong></h5>
+          <p class="card-text mb-2"><%= offer.description %></p>
+          <p class="card-text text-end"><i class="fa-solid fa-coins icon-yellow"></i> <%= offer.price%></p>
+          <div class="d-flex justify-content-between mt-3">
             <%= link_to 'Modifier', edit_offer_path(offer), class: 'btn btn-outline-secondary rounded-pill' %>
             <%= button_to 'Supprimer', offer_path(offer), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn-outline-danger rounded-pill' %>
-            </div>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
   <p class="w-100"><%= link_to "Ajouter une nouvelle location", new_offer_path, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0 mb-3 mt-2" %></p>
 </div>
