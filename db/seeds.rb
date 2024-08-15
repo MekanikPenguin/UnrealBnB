@@ -18,7 +18,7 @@ sauron = User.create(username: "RingLover", first_name: "Sauron", last_name: "Du
 
 puts "Création d'offres magiquement superbes..."
 
-poudllard = Offer.create(name: 'Poudlard', address: 'Alnwick NE66 1NQ, United Kingdom', url_image: 'https://miro.medium.com/v2/resize:fit:1200/1*g7nlreAAvIeBMGjS9jsRWQ.jpeg', price: 100000 , description: 'Poudlard est un pensionnat pour jeunes sorcières et sorciers dirigé principalement par Albus Dumbledore, considéré comme le plus grand sorcier de sa génération', user: rogue)
+poudlard = Offer.create(name: 'Poudlard', address: 'Alnwick NE66 1NQ, United Kingdom', url_image: 'https://miro.medium.com/v2/resize:fit:1200/1*g7nlreAAvIeBMGjS9jsRWQ.jpeg', price: 100000 , description: 'Poudlard est un pensionnat pour jeunes sorcières et sorciers dirigé principalement par Albus Dumbledore, considéré comme le plus grand sorcier de sa génération', user: rogue)
 sleep(4)
 chateau_peach = Offer.create(name: 'Chateau de Peach', address: '10 Rockefeller Plaza, New York, New York, 10020', url_image: 'https://nintendoeverything.com/wp-content/uploads/Mario-Bros-Movie-Mushroom-Kingdom.jpg', price: 5500 , description: 'Peach est la princesse du Royaume Champignon, qui est constamment attaquée par Bowser.', user: mario)
 sleep(4)
@@ -38,102 +38,95 @@ puts "Création de commentaires plus que douteux..."
 
 # Rogue
 
-Review.create(content: "Poudlard est un véritable rêve pour un maître des potions comme moi. Les ingrédients sont exceptionnels, et les salles secrètes offrent des trésors inestimables.", rating: 5, user: rogue, offer: "Poudlard")
-Review.create(content: "Le château est charmant mais un peu trop ensoleillé pour un endroit sérieux. Les ingrédients étaient moyens, mais l’ambiance est agréable.", rating: 4, user: rogue, offer: "Château_Peach")
-Review.create(content: "Le Donjon Rouge est parfait ! Les secrets anciens et les ingrédients rares sont un festin pour un alchimiste comme moi. Une vraie pépite.", rating: 5, user: rogue, offer: "Donjon_Rouge")
-Review.create(content: "Cul-de-sac est aussi stimulant qu'une potion de base. Rien de notable à part une ambiance de quartier résidentiel ennuyeux.", rating: 2, user: rogue, offer: "Cul-de-Sac")
-Review.create(content: "Les marais offrent quelques ingrédients uniques, mais l’environnement boueux n’est pas idéal pour préparer des potions précises.", rating: 3, user: rogue, offer: "Marais de Shrek")
-Review.create(content: "Le palais est rempli de trésors, mais la saleté et le chaos rendent le travail difficile. Malgré tout, une expérience intéressante pour un potionniste.", rating: 4, user: rogue, offer: "Palais de Jabba")
-Review.create(content: "Asgard est un paradis pour les potions ! Les ingrédients mystiques et les possibilités d’expérimentations sont infinies. Un lieu idéal pour tester mes créations.", rating: 5, user: rogue, offer: "Asgard")
-Review.create(content: "Novigrad est animée, mais les ingrédients pour potions sont médiocres. Un endroit intéressant, mais pas une destination de choix pour mes recherches.", rating: 3, user: rogue, offer: "Novigrad")
+Review.create(content: "Le château est charmant mais un peu trop ensoleillé pour un endroit sérieux. Les ingrédients étaient moyens, mais l’ambiance est agréable.", rating: 4, user: rogue, offer: chateau_peach)
+Review.create(content: "Le Donjon Rouge est parfait ! Les secrets anciens et les ingrédients rares sont un festin pour un alchimiste comme moi. Une vraie pépite.", rating: 5, user: rogue, offer: donjon_rouge)
+Review.create(content: "Cul-de-sac est aussi stimulant qu'une potion de base. Rien de notable à part une ambiance de quartier résidentiel ennuyeux.", rating: 2, user: rogue, offer: cul)
+Review.create(content: "Les marais offrent quelques ingrédients uniques, mais l’environnement boueux n’est pas idéal pour préparer des potions précises.", rating: 3, user: rogue, offer: marais)
+Review.create(content: "Le palais est rempli de trésors, mais la saleté et le chaos rendent le travail difficile. Malgré tout, une expérience intéressante pour un potionniste.", rating: 4, user: rogue, offer: palais)
+Review.create(content: "Asgard est un paradis pour les potions ! Les ingrédients mystiques et les possibilités d’expérimentations sont infinies. Un lieu idéal pour tester mes créations.", rating: 5, user: rogue, offer: asgard)
+Review.create(content: "Novigrad est animée, mais les ingrédients pour potions sont médiocres. Un endroit intéressant, mais pas une destination de choix pour mes recherches.", rating: 3, user: rogue, offer: novigrad)
 
 # Mario
 
-Review.create(content: "Poudlard est comme un niveau magique plein de surprises ! Les sorts et les mystères sont aussi amusants que de sauter sur des blocs.", rating: 5, user: "Mario", offer: "Poudlard")
-Review.create(content: "Le château est toujours un plaisir ! Les défis sont fun, et l’ambiance est parfaite. Toujours un endroit où je me sens chez moi.", rating: 5, user: "Mario", offer: "Château_Peach")
-Review.create(content: "Le Donjon Rouge est un peu trop sombre et compliqué pour moi. Je préfère les environnements plus lumineux et joyeux.", rating: 3, user: "Mario", offer: "Donjon_Rouge")
-Review.create(content: "Je me suis senti comme piégé dans un niveau sans fin. Il n’y a rien d’amusant ici, juste une grande déception.", rating: 1, user: "Mario", offer: "Cul-de-Sac")
-Review.create(content: "Les marais sont farfelus et amusants. J’ai évité les grenouilles, mais c’était une sortie agréable après des aventures plus épiques.", rating: 4, user: "Mario", offer: "Marais de Shrek")
-Review.create(content: "Le palais est trop sale et risqué pour moi. Même les défis ne valent pas la peine de se salir les mains. Pas pour moi.", rating: 2, user: "Mario", offer: "Palais de Jabba")
-Review.create(content: "Asgard est absolument spectaculaire ! Les paysages sont grandioses et les aventures sont à la hauteur de mes attentes. Un vrai rêve.", rating: 5, user: "Mario", offer: "Asgard")
-Review.create(content: "Novigrad est une ville vibrante avec plein d’aventures. Un peu chaotique, mais j’ai adoré explorer chaque recoin de cette ville.", rating: 4, user: "Mario", offer: "Novigrad")
+Review.create(content: "Poudlard est comme un niveau magique plein de surprises ! Les sorts et les mystères sont aussi amusants que de sauter sur des blocs.", rating: 5, user: mario, offer: poudlard)
+Review.create(content: "Le Donjon Rouge est un peu trop sombre et compliqué pour moi. Je préfère les environnements plus lumineux et joyeux.", rating: 3, user: mario, offer: donjon_rouge)
+Review.create(content: "Je me suis senti comme piégé dans un niveau sans fin. Il n’y a rien d’amusant ici, juste une grande déception.", rating: 1, user: mario, offer: cul)
+Review.create(content: "Les marais sont farfelus et amusants. J’ai évité les grenouilles, mais c’était une sortie agréable après des aventures plus épiques.", rating: 4, user: mario, offer: marais)
+Review.create(content: "Le palais est trop sale et risqué pour moi. Même les défis ne valent pas la peine de se salir les mains. Pas pour moi.", rating: 2, user: mario, offer: palais)
+Review.create(content: "Asgard est absolument spectaculaire ! Les paysages sont grandioses et les aventures sont à la hauteur de mes attentes. Un vrai rêve.", rating: 5, user: mario, offer: asgard)
+Review.create(content: "Novigrad est une ville vibrante avec plein d’aventures. Un peu chaotique, mais j’ai adoré explorer chaque recoin de cette ville.", rating: 4, user: mario, offer: novigrad)
 
 # Tyrion
 
-Review.create(content: "Poudlard est un joyau d’intrigues et de mystères. Parfait pour un esprit stratégique comme le mien, avec des secrets fascinants à chaque coin.", rating: 5, user: "Tyrion", offer: "Poudlard")
-Review.create(content: "Le château est trop simple et manquant de complexité. Charmant mais pas assez intrigant pour éveiller mon intérêt.", rating: 3, user: "Tyrion", offer: "Château_Peach")
-Review.create(content: "Le Donjon Rouge est un chef-d'œuvre de tactique et de stratégie. Les défis sont stimulants et les secrets, captivants.", rating: 5, user: "Tyrion", offer: "Donjon_Rouge")
-Review.create(content: "Cul-de-sac est l’antithèse d’une bonne intrigue. Rien à découvrir ici, juste une impasse sans intérêt.", rating: 2, user: "Tyrion", offer: "Cul-de-Sac")
-Review.create(content: "Les marais sont divertissants mais manquent de sophistication. Idéal pour une pause, mais pas pour des débats intellectuels.", rating: 3, user: "Tyrion", offer: "Marais de Shrek")
-Review.create(content: "Le palais est riche en personnages et en intrigues, bien que le désordre et l’odeur laissent à désirer. Intéressant mais un peu chaotique.", rating: 4, user: "Tyrion", offer: "Palais de Jabba")
-Review.create(content: "Asgard est un royaume impressionnant avec une profondeur stratégique remarquable. Les paysages sont majestueux et les défis, exaltants.", rating: 5, user: "Tyrion", offer: "Asgard")
-Review.create(content: "Novigrad est une ville fascinante avec des intrigues à chaque coin. Chaotique mais captivant, parfait pour une exploration stratégique.", rating: 4, user: "Tyrion", offer: "Novigrad")
+Review.create(content: "Poudlard est un joyau d’intrigues et de mystères. Parfait pour un esprit stratégique comme le mien, avec des secrets fascinants à chaque coin.", rating: 5, user: tyrion, offer: poudlard)
+Review.create(content: "Le château est trop simple et manquant de complexité. Charmant mais pas assez intrigant pour éveiller mon intérêt.", rating: 3, user: tyrion, offer: chateau_peach)
+Review.create(content: "Cul-de-sac est l’antithèse d’une bonne intrigue. Rien à découvrir ici, juste une impasse sans intérêt.", rating: 2, user: tyrion, offer: cul)
+Review.create(content: "Les marais sont divertissants mais manquent de sophistication. Idéal pour une pause, mais pas pour des débats intellectuels.", rating: 3, user: tyrion, offer: marais)
+Review.create(content: "Le palais est riche en personnages et en intrigues, bien que le désordre et l’odeur laissent à désirer. Intéressant mais un peu chaotique.", rating: 4, user: tyrion, offer: palais)
+Review.create(content: "Asgard est un royaume impressionnant avec une profondeur stratégique remarquable. Les paysages sont majestueux et les défis, exaltants.", rating: 5, user: tyrion, offer: asgard)
+Review.create(content: "Novigrad est une ville fascinante avec des intrigues à chaque coin. Chaotique mais captivant, parfait pour une exploration stratégique.", rating: 4, user: tyrion, offer: novigrad)
 
 # Frodon
 
-Review.create(content: "Poudlard est un lieu magique et envoûtant. Chaque recoin est rempli de mystères et d’aventures dignes d’une grande quête.", rating: 5, user: "Frodon", offer: "Poudlard")
-Review.create(content: "Le château est magnifique et accueillant. Cependant, il manque un peu de l’épique que je recherche. Parfait pour une pause mais pas pour une grande aventure.", rating: 4, user: "Frodon", offer: "Château_Peach")
-Review.create(content: "Le Donjon Rouge est une épopée fascinante ! Les défis et les trésors sont à la hauteur d’une quête héroïque.", rating: 5, user: "Frodon", offer: "Donjon_Rouge")
-Review.create(content: "Cul-de-sac est une impasse ennuyeuse. Rien à faire ici, juste une déception pour quelqu’un en quête d’aventures.", rating: 2, user: "Frodon", offer: "Cul-de-Sac")
-Review.create(content: "Les marais sont farfelus et amusants. Un bon endroit pour se détendre mais pas vraiment pour des aventures héroïques.", rating: 3, user: "Frodon", offer: "Marais de Shrek")
-Review.create(content: "Le palais est rempli de mystères et d’aventures captivantes. Un peu chaotique, mais les découvertes en valent la peine.", rating: 4, user: "Frodon", offer: "Palais de Jabba")
-Review.create(content: "Asgard est grandiose ! Les paysages majestueux et les aventures épiques font de cet endroit un lieu inoubliable.", rating: 5, user: "Frodon", offer: "Asgard")
-Review.create(content: "Novigrad est animée et pleine de vie. Une excellente ville pour explorer, même si elle peut parfois être un peu chaotique.", rating: 4, user: "Frodon", offer: "Novigrad")
+Review.create(content: "Poudlard est un lieu magique et envoûtant. Chaque recoin est rempli de mystères et d’aventures dignes d’une grande quête.", rating: 5, user: frodon, offer: poudlard)
+Review.create(content: "Le château est magnifique et accueillant. Cependant, il manque un peu de l’épique que je recherche. Parfait pour une pause mais pas pour une grande aventure.", rating: 4, user: frodon, offer: chateau_peach)
+Review.create(content: "Le Donjon Rouge est une épopée fascinante ! Les défis et les trésors sont à la hauteur d’une quête héroïque.", rating: 5, user: frodon, offer: donjon_rouge)
+Review.create(content: "Les marais sont farfelus et amusants. Un bon endroit pour se détendre mais pas vraiment pour des aventures héroïques.", rating: 3, user: frodon, offer: marais)
+Review.create(content: "Le palais est rempli de mystères et d’aventures captivantes. Un peu chaotique, mais les découvertes en valent la peine.", rating: 4, user: frodon, offer: palais)
+Review.create(content: "Asgard est grandiose ! Les paysages majestueux et les aventures épiques font de cet endroit un lieu inoubliable.", rating: 5, user: frodon, offer: asgard)
+Review.create(content: "Novigrad est animée et pleine de vie. Une excellente ville pour explorer, même si elle peut parfois être un peu chaotique.", rating: 4, user: frodon, offer: novigrad)
 
 # Fiona
 
-Review.create(content: "Poudlard est un lieu enchanteur ! Les mystères et la magie rendent chaque jour excitant et plein de surprises.", rating: 5, user: "Fiona", offer: "Poudlard")
-Review.create(content: "Le château est charmant et accueillant, mais je préfère les endroits avec un peu plus de caractère et d’aventure.", rating: 4, user: "Fiona", offer: "Château_Peach")
-Review.create(content: "Le Donjon Rouge est parfait pour une aventurière comme moi. Les secrets et les défis sont palpitants. Une véritable exploration épique.", rating: 5, user: "Fiona", offer: "Donjon_Rouge")
-Review.create(content: "Cul-de-sac est trop monotone et sans intérêt. Rien de fascinant ou d’aventureux à y découvrir.", rating: 2, user: "Fiona", offer: "Cul-de-Sac")
-Review.create(content: "Les marais sont amusants et un peu déjantés. Une escapade agréable, mais pas pour des aventures sérieuses.", rating: 3, user: "Fiona", offer: "Marais de Shrek")
-Review.create(content: "Le palais est rempli d’intrigues et de créatures intéressantes. Un peu chaotique, mais l’aventure est au rendez-vous.", rating: 4, user: "Fiona", offer: "Palais de Jabba")
-Review.create(content: "Asgard est spectaculaire ! Les paysages sont majestueux et les aventures sont à la hauteur de mes attentes. Un véritable paradis pour une aventurière.", rating: 5, user: "Fiona", offer: "Asgard")
-Review.create(content: "Novigrad est vivante et pleine de surprises. Un endroit intéressant à explorer, bien que parfois un peu chaotique.", rating: 4, user: "Fiona", offer: "Novigrad")
+Review.create(content: "Poudlard est un lieu enchanteur ! Les mystères et la magie rendent chaque jour excitant et plein de surprises.", rating: 5, user: fiona, offer: poudlard)
+Review.create(content: "Le château est charmant et accueillant, mais je préfère les endroits avec un peu plus de caractère et d’aventure.", rating: 4, user: fiona, offer: chateau_peach)
+Review.create(content: "Le Donjon Rouge est parfait pour une aventurière comme moi. Les secrets et les défis sont palpitants. Une véritable exploration épique.", rating: 5, user: fiona, offer: donjon_rouge)
+Review.create(content: "Cul-de-sac est trop monotone et sans intérêt. Rien de fascinant ou d’aventureux à y découvrir.", rating: 2, user: fiona, offer: cul)
+Review.create(content: "Le palais est rempli d’intrigues et de créatures intéressantes. Un peu chaotique, mais l’aventure est au rendez-vous.", rating: 4, user: fiona, offer: palais)
+Review.create(content: "Asgard est spectaculaire ! Les paysages sont majestueux et les aventures sont à la hauteur de mes attentes. Un véritable paradis pour une aventurière.", rating: 5, user: fiona, offer: asgard)
+Review.create(content: "Novigrad est vivante et pleine de surprises. Un endroit intéressant à explorer, bien que parfois un peu chaotique.", rating: 4, user: fiona, offer: novigrad)
 
 # Luke Skywalker
 
-Review.create(content: "Poudlard est comme un véritable terrain d’entraînement pour un Jedi ! Les mystères et les magies sont fascinants, mais je préfère les défis intergalactiques.", rating: 4, user: "Luke Skywalker", offer: "Poudlard")
-Review.create(content: "Le château est agréable et amusant, mais il manque un peu de la grandeur des galaxies lointaines. Idéal pour une petite escapade.", rating: 3, user: "Luke Skywalker", offer: "Château_Peach")
-Review.create(content: "Le Donjon Rouge est un véritable champ de bataille ! Les défis sont intenses, mais il y a trop de ténèbres pour un Jedi.", rating: 4, user: "Luke Skywalker", offer: "Donjon_Rouge")
-Review.create(content: "Cul-de-sac est aussi ennuyeux qu’un désert stérile. Rien de passionnant ici, juste une impasse.", rating: 2, user: "Luke Skywalker", offer: "Cul-de-Sac")
-Review.create(content: "Les marais sont farfelus et légèrement dérangeants. Un endroit amusant pour une pause, mais pas pour une aventure épique.", rating: 3, user: "Luke Skywalker", offer: "Marais de Shrek")
-Review.create(content: "Le palais est chaotique et rempli de créatures excentriques. Bien pour un passage rapide, mais le côté obscur y règne.", rating: 3, user: "Luke Skywalker", offer: "Palais de Jabba")
-Review.create(content: "Asgard est grandiose et digne d’une épopée intergalactique ! Les paysages majestueux et les défis sont à la hauteur de mes espérances.", rating: 5, user: "Luke Skywalker", offer: "Asgard")
-Review.create(content: "Novigrad est dynamique et pleine de vie. Une ville vibrante, même si elle est parfois trop chaotique pour un Jedi en quête de paix.", rating: 4, user: "Luke Skywalker", offer: "Novigrad")
+Review.create(content: "Poudlard est comme un véritable terrain d’entraînement pour un Jedi ! Les mystères et les magies sont fascinants, mais je préfère les défis intergalactiques.", rating: 4, user: luke, offer: poudlard)
+Review.create(content: "Le château est agréable et amusant, mais il manque un peu de la grandeur des galaxies lointaines. Idéal pour une petite escapade.", rating: 3, user: luke, offer: chateau_peach)
+Review.create(content: "Le Donjon Rouge est un véritable champ de bataille ! Les défis sont intenses, mais il y a trop de ténèbres pour un Jedi.", rating: 4, user: luke, offer: donjon_rouge)
+Review.create(content: "Cul-de-sac est aussi ennuyeux qu’un désert stérile. Rien de passionnant ici, juste une impasse.", rating: 2, user: luke, offer: cul)
+Review.create(content: "Les marais sont farfelus et légèrement dérangeants. Un endroit amusant pour une pause, mais pas pour une aventure épique.", rating: 3, user: luke, offer: marais)
+Review.create(content: "Asgard est grandiose et digne d’une épopée intergalactique ! Les paysages majestueux et les défis sont à la hauteur de mes espérances.", rating: 5, user: luke, offer: asgard)
+Review.create(content: "Novigrad est dynamique et pleine de vie. Une ville vibrante, même si elle est parfois trop chaotique pour un Jedi en quête de paix.", rating: 4, user: luke, offer: novigrad)
 
 # Sauron
 
-Review.create(content: "Poudlard est un château insignifiant. Les mystères sont trop basiques et les sorts sont de faible puissance. Décevant pour un Seigneur des Ténèbres.", rating: 2, user: "Sauron", offer: "Poudlard")
-Review.create(content: "Le château est une forteresse ridicule. Trop de couleurs vives et aucune menace réelle. Complètement ennuyeux.", rating: 1, user: "Sauron", offer: "Château_Peach")
-Review.create(content: "Le Donjon Rouge est digne d’un seigneur maléfique. Les défis sont grands et les secrets, profonds. Un vrai terrain de jeu pour le pouvoir.", rating: 5, user: "Sauron", offer: "Donjon_Rouge")
-Review.create(content: "Cul-de-sac est une impasse sans grandeur. Rien à conquérir ni à dominer. Inutile et insignifiant.", rating: 1, user: "Sauron", offer: "Cul-de-Sac")
-Review.create(content: "Les marais sont boueux et vulgaires. Peu de potentiel pour des ambitions sombres. Décevant et misérable.", rating: 2, user: "Sauron", offer: "Marais de Shrek")
-Review.create(content: "Le palais est un lieu chaotique mais intrigant. Les créatures excentriques et les intrigues sont intéressantes, même si c’est sale.", rating: 4, user: "Sauron", offer: "Palais de Jabba")
-Review.create(content: "Asgard est un royaume puissant et majestueux. Les défis sont grands et l’ambiance est digne de la conquête. Idéal pour un maître du mal.", rating: 5, user: "Sauron", offer: "Asgard")
-Review.create(content: "Novigrad est vivante mais trop chaotique. Bien pour une simple visite, mais pas assez sombre pour des plans machiavéliques.", rating: 3, user: "Sauron", offer: "Novigrad")
+Review.create(content: "Poudlard est un château insignifiant. Les mystères sont trop basiques et les sorts sont de faible puissance. Décevant pour un Seigneur des Ténèbres.", rating: 2, user: sauron, offer: poudlard)
+Review.create(content: "Le château est une forteresse ridicule. Trop de couleurs vives et aucune menace réelle. Complètement ennuyeux.", rating: 1, user: sauron, offer: chateau_peach)
+Review.create(content: "Le Donjon Rouge est digne d’un seigneur maléfique. Les défis sont grands et les secrets, profonds. Un vrai terrain de jeu pour le pouvoir.", rating: 5, user: sauron, offer: donjon_rouge)
+Review.create(content: "Cul-de-sac est une impasse sans grandeur. Rien à conquérir ni à dominer. Inutile et insignifiant.", rating: 1, user: sauron, offer: cul)
+Review.create(content: "Les marais sont boueux et vulgaires. Peu de potentiel pour des ambitions sombres. Décevant et misérable.", rating: 2, user: sauron, offer: marais)
+Review.create(content: "Le palais est un lieu chaotique mais intrigant. Les créatures excentriques et les intrigues sont intéressantes, même si c’est sale.", rating: 4, user: sauron, offer: palais)
+Review.create(content: "Asgard est un royaume puissant et majestueux. Les défis sont grands et l’ambiance est digne de la conquête. Idéal pour un maître du mal.", rating: 5, user: sauron, offer: asgard)
+Review.create(content: "Novigrad est vivante mais trop chaotique. Bien pour une simple visite, mais pas assez sombre pour des plans machiavéliques.", rating: 3, user: sauron, offer: novigrad)
 
 # Thor
 
-Review.create(content: "Poudlard est épique ! Les sorts et les mystères sont grandioses, mais j’aurais préféré plus de combats et de gloire.", rating: 4, user: "Thor", offer: "Poudlard")
-Review.create(content: "Le château est magnifique et plein de festivités ! Les défis sont amusants, et l’endroit est idéal pour se détendre après une bataille.", rating: 5, user: "Thor", offer: "Château_Peach")
-Review.create(content: "Le Donjon Rouge est digne d’un héros ! Les défis sont grands, et l’aventure est à la hauteur de la légende. Une véritable épopée.", rating: 5, user: "Thor", offer: "Donjon_Rouge")
-Review.create(content: "Cul-de-sac est aussi palpitant qu’une journée pluvieuse. Aucune aventure ni défi digne de mon marteau.", rating: 2, user: "Thor", offer: "Cul-de-Sac")
-Review.create(content: "Les marais sont amusants et farfelus. Une escapade divertissante, mais pas à la hauteur des grandes batailles.", rating: 3, user: "Thor", offer: "Marais de Shrek")
-Review.create(content: "Le palais est rempli d’intrigues et de chaos. Un endroit fascinant mais parfois un peu trop sombre pour ma lumière.", rating: 4, user: "Thor", offer: "Palais de Jabba")
-Review.create(content: "Asgard est un lieu grandiose ! Les paysages sont majestueux et les aventures sont dignes des plus grands héros.", rating: 5, user: "Thor", offer: "Asgard")
-Review.create(content: "Novigrad est animée et pleine de vie. Une ville vibrante avec des défis intéressants, bien que parfois un peu chaotique.", rating: 4, user: "Thor", offer: "Novigrad")
+Review.create(content: "Poudlard est épique ! Les sorts et les mystères sont grandioses, mais j’aurais préféré plus de combats et de gloire.", rating: 4, user: thor, offer: poudlard)
+Review.create(content: "Le château est magnifique et plein de festivités ! Les défis sont amusants, et l’endroit est idéal pour se détendre après une bataille.", rating: 5, user: thor, offer: chateau_peach)
+Review.create(content: "Le Donjon Rouge est digne d’un héros ! Les défis sont grands, et l’aventure est à la hauteur de la légende. Une véritable épopée.", rating: 5, user: thor, offer: donjon_rouge)
+Review.create(content: "Cul-de-sac est aussi palpitant qu’une journée pluvieuse. Aucune aventure ni défi digne de mon marteau.", rating: 2, user: thor, offer: cul)
+Review.create(content: "Les marais sont amusants et farfelus. Une escapade divertissante, mais pas à la hauteur des grandes batailles.", rating: 3, user: thor, offer: marais)
+Review.create(content: "Le palais est rempli d’intrigues et de chaos. Un endroit fascinant mais parfois un peu trop sombre pour ma lumière.", rating: 4, user: thor, offer: palais)
+Review.create(content: "Asgard est un lieu grandiose ! Les paysages sont majestueux et les aventures sont dignes des plus grands héros.", rating: 5, user: thor, offer: asgard)
 
 # Geralt
 
-Review.create(content: "Poudlard est fascinant, avec ses mystères et ses sorts. Mais un peu trop de magie et pas assez de monstres à chasser.", rating: 4, user: "Geralt", offer: "Poudlard")
-Review.create(content: "Le château est agréable mais un peu trop simple. Les défis sont légers, parfait pour un repos mais pas pour des aventures intenses.", rating: 3, user: "Geralt", offer: "Château_Peach")
-Review.create(content: "Le Donjon Rouge est une véritable épreuve ! Les défis sont intenses et les secrets, captivants. Idéal pour un chasseur de monstres.", rating: 5, user: "Geralt", offer: "Donjon_Rouge")
-Review.create(content: "Cul-de-sac est ennuyeux et sans intérêt. Aucune créature ou mystère à chasser ici, juste une grande déception.", rating: 2, user: "Geralt", offer: "Cul-de-Sac")
-Review.create(content: "Les marais sont farfelus et amusants. Quelques créatures étranges, mais pas assez pour une vraie chasse.", rating: 3, user: "Geralt", offer: "Marais de Shrek")
-Review.create(content: "Le palais est rempli de mystères et de créatures intrigantes. Un endroit intéressant malgré le chaos ambiant.", rating: 4, user: "Geralt", offer: "Palais de Jabba")
-Review.create(content: "Asgard est époustouflant ! Les défis sont grands et les créatures sont redoutables. Un véritable terrain de chasse pour un sorceleur.", rating: 5, user: "Geralt", offer: "Asgard")
-Review.create(content: "Novigrad est vivante et pleine de surprises. Une ville vibrante avec des défis intéressants, même si le chaos peut être un peu écrasant.", rating: 4, user: "Geralt", offer: "Novigrad")
+Review.create(content: "Poudlard est fascinant, avec ses mystères et ses sorts. Mais un peu trop de magie et pas assez de monstres à chasser.", rating: 4, user: geralt, offer: poudlard)
+Review.create(content: "Le château est agréable mais un peu trop simple. Les défis sont légers, parfait pour un repos mais pas pour des aventures intenses.", rating: 3, user: geralt, offer: chateau_peach)
+Review.create(content: "Le Donjon Rouge est une véritable épreuve ! Les défis sont intenses et les secrets, captivants. Idéal pour un chasseur de monstres.", rating: 5, user: geralt, offer: donjon_rouge)
+Review.create(content: "Cul-de-sac est ennuyeux et sans intérêt. Aucune créature ou mystère à chasser ici, juste une grande déception.", rating: 2, user: geralt, offer: cul)
+Review.create(content: "Les marais sont farfelus et amusants. Quelques créatures étranges, mais pas assez pour une vraie chasse.", rating: 3, user: geralt, offer: marais)
+Review.create(content: "Le palais est rempli de mystères et de créatures intrigantes. Un endroit intéressant malgré le chaos ambiant.", rating: 4, user: geralt, offer: palais)
+Review.create(content: "Asgard est époustouflant ! Les défis sont grands et les créatures sont redoutables. Un véritable terrain de chasse pour un sorceleur.", rating: 5, user: geralt, offer: asgard)
+Review.create(content: "Novigrad est vivante et pleine de surprises. Une ville vibrante avec des défis intéressants, même si le chaos peut être un peu écrasant.", rating: 4, user: geralt, offer: novigrad)
 
 
 puts "Yahhoouuu!"

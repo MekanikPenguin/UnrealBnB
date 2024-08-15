@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :offers, through: :bookings
   has_many :offers, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_many :reviews
 
   #validations
   validates :username, presence: true, uniqueness: true

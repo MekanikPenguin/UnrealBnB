@@ -15,6 +15,9 @@ class BookingsController < ApplicationController
     end
   end
 
+  def new
+
+  end
   def destroy
     @booking.destroy
     redirect_to mybookings_path, status: :see_other
