@@ -26,6 +26,7 @@ class OffersController < ApplicationController
       lng: @offer.longitude,
       info_window_html: render_to_string(partial: "info_window", locals: { offer: @offer })
     }]
+    @reviews = @offer.reviews
   end
 
   def new
@@ -68,7 +69,7 @@ class OffersController < ApplicationController
   def set_offer
     @offer = Offer.find(params[:id])
   end
-  
+
   def offer_params
     params.require(:offer).permit(:name, :address, :price, :description, :image)
   end
