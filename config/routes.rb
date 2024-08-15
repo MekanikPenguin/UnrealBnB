@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   get "/mybookings", to: "pages#mybookings", as: "mybookings"
 
   resources :offers do
-    resources :bookings, only: [:new, :create, :destroy] do
-      member do
-        patch 'accept'
-        patch 'reject'
-      end
+    resources :bookings, only: [:new, :create, :destroy]
+  end
+
+  resources :bookings, only: [] do
+    member do
+      patch 'accept'
+      patch 'reject'
     end
   end
 end

@@ -21,11 +21,11 @@
           <p class="card-text mb-2">
             Statut:
             <% if booking.status == 'pending' %>
-              <i class="fa-solid fa-hourglass-half"></i>En attente de validation
+              <i class="fa-solid fa-hourglass-half"></i> En attente de validation
             <% elsif booking.status == 'accepted' %>
-              <i class="fa-solid fa-circle-check"></i>Réservation acceptée
+              <i class="fa-solid fa-circle-check"></i> Réservation acceptée
             <% elsif booking.status == 'rejected' %>
-              <i class="fa-solid fa-xmark"></i>Réservation refusée
+              <i class="fa-solid fa-xmark"></i> Réservation refusée
             <% end %>
           </p>
           <div class="d-flex justify-content-between">
