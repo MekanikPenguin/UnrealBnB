@@ -10,11 +10,11 @@
                           'https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
                         else
                           offer.url_image.strip
-                        end %>" alt="Offer Image"/>
+                        end %>" alt="Offer Image" style="height: 200px; object-fit: cover; width: 100%;"/>
           <div class="card-body">
             <h5 class="card-title"><strong><%= offer.name %></strong></h5>
-            <%= link_to 'Voir cette offre', offer_path(offer), class: 'btn btn-outline-primary rounded-pill' %>
-            <p class="card-text"><%= offer.description.truncate(100) %></p>
+            <p class="card-text mb-2"><%= offer.description.truncate(100) %></p>
+            <%= link_to 'Voir cette offre', offer_path(offer), class: 'btn btn-outline-info rounded-pill' %>
             <p class="card-text"><u>Hôte:</u> <%= offer.user.username%></p>
             <p class="card-text"><%= offer.price%> <i class="fa-solid fa-coins" style="color: #F4DB12;"></i></p>
           </div>
@@ -24,7 +24,9 @@
       <p>No offers available.</p>
     <% end %>
   </div>
-
+  <hr>
+  <h2> Explore with our map.</h2>
+  <br>
   <div style="width: 100%; height: 600px;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
