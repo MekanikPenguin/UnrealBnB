@@ -13,11 +13,12 @@
       <div class="offer-show-card">
         <h1><%= @offer.name %></h1>
         <hr>
-        <p>Hôte: <%= @offer.user.username  %> </p>
+        <div class="d-flex">
         <%= render 'layouts/set_vava', vava: @offer.user %>
-        <hr>
+        <p class="fw-bold mx-3 pt-2">Hôte: <%= @offer.user.username  %> </p>
+        </div>
         <p><%= @offer.description %></p>
-        <div class="d-flex justify-content-between ">
+        <div class="d-flex justify-content-between">
         <p class="offer-show-address mb-0"><i class="fa-solid fa-location-dot fa-bounce icon-blue px-1"></i><%= @offer.address %></p>
         <p class="price mb-0"><i class="fa-solid fa-coins icon-yellow fa-beat px-1"></i><%= @offer.price %></p>
         </div>
@@ -35,7 +36,7 @@
     </div>
   </div>
 
-  <div style="width: 100%; height: 600px;"
+  <div class="mt-5 " style="width: 100%; height: 600px;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
