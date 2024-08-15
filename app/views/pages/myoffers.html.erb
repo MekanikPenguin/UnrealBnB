@@ -16,19 +16,24 @@
           <h5 class="card-title"><strong><%= offer.name %></strong></h5>
           <p class="card-text mb-2"><%= offer.description %></p>
           <p class="card-text text-end"><i class="fa-solid fa-coins icon-yellow"></i> <%= offer.price%></p>
-          <p class="card-text mb-2">Pas de demande en attente</p>
             <% if offer.bookings.pending.any? %>
-              <p class="card-text mb-2">Demandes de réservation : <%= offer.bookings.pending.count %></p>
-              <ul>
+              <p class="card-text mb-1">Demandes de réservation : <%= offer.bookings.pending.count %></p>
+              <ul class="list-group list-group-flush">
                 <% offer.bookings.pending.each do |booking| %>
-                  <li>
-                    <%= booking.user.username %> - Du <%= booking.start_date %> au <%= booking.end_date %>
+                  <li class="list-group-item">
+                    <div class="d-flex justify-content-start modal-dialog modal-dialog-centered gap-2">
+                      <i class="fa-solid fa-circle-dot text-warning"></i>
+                      <p class="card-text mt-0 p-0"><%= booking.user.username %></p>
+                    </div>
+                    <p class="card-text">Du <%= booking.start_date %> au <%= booking.end_date %></p>
                     <div class="d-flex justify-content-center p-2 gap-1">
-                      <%= link_to 'Accepter', accept_booking_path(booking), data: {turbo_method: :patch}, class: 'btn btn-success btn-sm rounded' %>
-                      <%= button_to 'Refuser', reject_booking_path(booking), method: :patch, class: 'btn btn-danger btn-sm rounded' %>
+                      <%= button_to 'Accepter', accept_booking_path(booking), method: :patch, class: 'btn btn-success btn-sm rounded opacity-75' %>
+                      <%= button_to 'Refuser', reject_booking_path(booking), method: :patch, class: 'btn btn-danger btn-sm rounded opacity-75' %>
                     </div></li>
                 <% end %>
               </ul>
+            <% else %>
+              <p class="card-text mb-2 text-muted"><i>Pas de demande en attente</i></p>
             <% end %>
           <div class="d-flex justify-content-between mt-3">
             <%= link_to 'Modifier', edit_offer_path(offer), class: 'btn btn-outline-secondary rounded-pill' %>

@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get "/mybookings", to: "pages#mybookings", as: "mybookings"
 
   resources :offers do
-    resources :bookings, only: [:new, :create, :destroy]
+    resources :bookings, only: [:create, :destroy]
+    resources :reviews, only: :create
   end
 
   resources :bookings, only: [] do
