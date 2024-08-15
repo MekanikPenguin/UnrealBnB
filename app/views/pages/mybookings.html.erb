@@ -1,23 +1,22 @@
-<div class="text-center mt-4">
-  <h1>Mes Réservations Imaginaires</h1>
-</div>
-<br>
-<div class="d-flex flex-wrap">
-  <div class="row row-cols-1 row-cols-md-2 g-4">
+<div class="container mt-4">
+  <h1 class="mb-4">Mes réservations imaginaires</h1>
+  <div class="d-flex flex-wrap">
     <% current_user.bookings.each do |booking| %>
-      <div class="card m-3" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title"><%= booking.offer.name %></h5>
-          <img src="<%= if booking.offer.image.attached?
+      <div class="card m-3" style="width: 18rem; border-radius: 15px">
+           <%= link_to offer_path(booking.offer) do %>
+            <img src="<%= if booking.offer.image.attached?
                           cl_image_path(booking.offer.image.key)
                         elsif booking.offer.url_image.nil?
                           'https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
                         else
                           booking.offer.url_image.strip
-                        end %>" class="card-img-top" alt="<%= booking.offer.name %>">
-          <p class="card-text mb-2">Date de la réservation</p>
-          <p class="card-text mb-2">Début : <%= booking.start_date %></p>
-          <p class="card-text mb-2">Fin : <%= booking.end_date %></p>
+                        end %>" class="card-img-top" alt="<%= booking.offer.name %>"  style="height: 200px; object-fit: cover; width: 100%;" >
+            <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><strong><%= booking.offer.name %></strong></h5>
+          <p class="card-text mb-2">Détails de la réservation</p>
+          <p class="card-text mb-2"><u>Début :</u> <%= booking.start_date %></p>
+          <p class="card-text mb-2"><u>Fin :</u> <%= booking.end_date %></p>
           <p class="card-text mb-2">
             Statut:
             <% if booking.status == 'pending' %>
@@ -28,12 +27,12 @@
               <i class="fa-solid fa-xmark"></i> Réservation refusée
             <% end %>
           </p>
-          <div class="d-flex justify-content-between">
-            <%= link_to 'Détails', offer_path(booking.offer), class: 'btn btn-outline-secondary' %>
-            <%= button_to 'Annuler', offer_booking_path(booking.offer, booking), method: :delete, data: { turbo_confirm: 'Vous êtes sûr?' }, class: 'btn btn-outline-danger' %>
+          <div class="text-end mt-auto">
+            <%= button_to 'Annuler', offer_booking_path(booking.offer, booking), method: :delete, data: { turbo_confirm: 'Vous êtes sûr?' }, class: 'btn btn-outline-danger rounded-pill' %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
+  <p class="w-100"><%= link_to "Cherchez une nouvelle location", new_offer_path, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0 mb-3 mt-2" %></p>
 </div>

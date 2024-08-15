@@ -32,7 +32,7 @@
             <% end %>
           <div class="d-flex justify-content-between mt-3">
             <%= link_to 'Modifier', edit_offer_path(offer), class: 'btn btn-outline-secondary rounded-pill' %>
-            <%= button_to 'Supprimer', offer_path(offer), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn-outline-danger rounded-pill' %>
+            <%= button_to 'Annuler', offer_path(offer), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn-outline-danger rounded-pill' %>
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 <%= simple_form_for :search, url: root_path, method: :get do |f| %>
   <div class="search-form-control form-group">
     <%= f.input :query, label: false, placeholder: "Rechercher", input_html: { value: params[:search] && params[:search][:query] } %>
-    <%= f.button :submit, "Rechercher", class: "btn btn-flat" %>
+    <button type="submit" class="btn btn-flat">
+      <i class="fa-brands fa-searchengin fs-3 icon-blue"></i>
+    </button>
   </div>
 <% end %>
