@@ -29,23 +29,10 @@ body {
   padding-top: 56px;
 }
 
-.navbar {
-  margin-bottom: 20px;
-}
-
-
-
 .flex-align {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-
-.map {
-  height: 400px;
-  background-position: center;
-  background-size: cover;
 }
 
 .margin-top-negative {
@@ -68,20 +55,4 @@ body {
 .price {
   font-weight: bold;
   font-size: 20px;
-}
-
-.icon-yellow {
-  color: $yellow;
-}
-
-.icon-blue {
-  color: $blue;
-}
-
-.icon-blue-green {
-  color: $blue-green;
-}
-
-.index-button-blue-green {
-  border-radius: 15px;
 }
