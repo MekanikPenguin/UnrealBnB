@@ -31,6 +31,15 @@
       </div>
     </div>
   </div>
+  <div>Total = <%= @offer.rating %></div>
+  <% @reviews.each do | review | %>
+    <div>
+      <%= render 'layouts/set_vava', vava: review.user %>
+      <%= review.user.username %>
+      <%= review.rating %>
+      <%= review.content %>
+    </div>
+  <% end %>
 
   <div style="width: 100%; height: 600px;"
     data-controller="map"

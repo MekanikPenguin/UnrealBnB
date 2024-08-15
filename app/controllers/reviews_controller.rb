@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review.offer = @offer
 
     if @review.save
-      if @offer.rating
+      if @offer.rating == nil
         # Calculer la nouvelle note avant d'incrémenter le nombre de reviews
         new_rating = ((@offer.rating * @offer.reviews.count) + @review.rating) / (@offer.reviews.count + 1)
       else
