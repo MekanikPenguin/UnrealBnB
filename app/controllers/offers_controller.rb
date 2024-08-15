@@ -2,7 +2,6 @@ class OffersController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
 
-
   def index
     @offers = Offer.all
     if params[:search].present? && params[:search][:query].present?
@@ -69,6 +68,7 @@ class OffersController < ApplicationController
   def set_offer
     @offer = Offer.find(params[:id])
   end
+  
   def offer_params
     params.require(:offer).permit(:name, :address, :price, :description, :image)
   end

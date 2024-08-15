@@ -1,18 +1,15 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:destroy]
-  before_action :authenticate_user!, only: [:create, :destroy]
-  before_action :authorize_user!, only: [:destroy]
+  before_action :set_booking, only: [:destroy, :accept, :reject]
 
   def create
     @user = current_user
-    puts "user est: #{@user}"
     @offer = Offer.find(params[:offer_id])
-    puts "offer est: #{@offer}"
     @booking = Booking.new(booking_params)
     @booking.user = @user
     @booking.offer = @offer
+    @booking.status = "pending"
     if @booking.save
-      redirect_to mybookings_path
+      redirect_to mybookings_path, notice: "Votre demande de réservation a été envoyée."
     else
       render :new, status: :unprocessable_entity
     end
@@ -23,6 +20,16 @@ class BookingsController < ApplicationController
     redirect_to mybookings_path, status: :see_other
   end
 
+  def accept
+    @booking.update(status: 'accepted')
+    redirect_to myoffers_path, notice: 'Réservation acceptée.'
+  end
+
+  def reject
+    @booking.update(status: 'rejected')
+    redirect_to myoffers_path, notice: 'Réservation refusée.'
+  end
+
   private
 
   def booking_params
@@ -30,7 +37,6 @@ class BookingsController < ApplicationController
   end
 
   def set_booking
-    @booking = current_user.bookings.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
-
 end
