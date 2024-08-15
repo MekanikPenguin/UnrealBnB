@@ -11,11 +11,23 @@
     <div class="col-8">
       <div class="offer-show-card">
         <h1><%= @offer.name %></h1>
+        <hr>
+        <div class="d-flex">
+        <%= render 'layouts/set_vava', vava: @offer.user %>
+        <p class="fw-bold mx-3 pt-2">Hôte: <%= @offer.user.username  %> </p>
+        </div>
         <p><%= @offer.description %></p>
+<<<<<<< HEAD
         <p class="price"><i class="fa-solid fa-coins" style="color: #000000;"></i><%= @offer.price.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %> *</p>
         <p class="little_text"><i>* le prix n'est pas imaginaire</i></p>
         <br>
         <p class="offer-show-address"><%= @offer.address %></p>
+=======
+        <div class="d-flex justify-content-between">
+        <p class="offer-show-address mb-0"><i class="fa-solid fa-location-dot fa-bounce icon-blue px-1"></i><%= @offer.address %></p>
+        <p class="price mb-0"><i class="fa-solid fa-coins icon-yellow fa-beat px-1"></i><%= @offer.price %></p>
+        </div>
+>>>>>>> d2ad0fe110fff5499dabeb097cbbb0dbb913dee3
       </div>
     </div>
     <div class="col-4">
@@ -62,7 +74,7 @@
     <% end %>
   </div>
 
-  <div style="width: 100%; height: 600px;"
+  <div class="mt-5 " style="width: 100%; height: 600px;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
