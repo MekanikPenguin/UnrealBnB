@@ -20,10 +20,22 @@
                           offer.url_image.strip
                         end %>" class="card-img-top" alt="<%= offer.name %>" class="card-img-top" alt="<%= offer.name %>">
             <p class="card-text mb-2"><%= offer.description %></p>
+            <p class="card-text mb-2">Demandes de réservation : <%= offer.bookings.pending.count %></p>
+            <% if offer.bookings.pending.any? %>
+              <ul>
+                <% offer.bookings.pending.each do |booking| %>
+                  <li>
+                    <%= booking.user.username %> - Du <%= booking.start_date %> au <%= booking.end_date %>
+                    <%= link_to 'Accepter', accept_offer_booking_path(offer, booking), method: :patch, class: 'btn btn-success btn-sm' %>
+                    <%= link_to 'Refuser', reject_offer_booking_path(offer, booking), method: :patch, class: 'btn btn-danger btn-sm' %>
+                  </li>
+                <% end %>
+              </ul>
+            <% end %>
             <div class="d-flex justify-content-between">
-            <%= link_to 'Modifier', edit_offer_path(offer), class: 'btn btn-outline-success' %>
-            <%= link_to 'Détails', offer_path(offer), class: 'btn btn-outline-secondary' %>
-            <%= button_to 'Supprimer', offer_path(offer), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn-outline-danger' %>
+              <%= link_to 'Modifier', edit_offer_path(offer), class: 'btn btn-outline-success' %>
+              <%= link_to 'Détails', offer_path(offer), class: 'btn btn-outline-secondary' %>
+              <%= button_to 'Supprimer', offer_path(offer), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn-outline-danger' %>
             </div>
           </div>
         </div>
@@ -31,9 +43,3 @@
     </div>
   </div>
 </div>
-
- <%# <%= link_to "Delete", offer_path(@offer),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
-
-   <%# <%= link_to "Edit this offer", edit_offer_path %>
