@@ -13,13 +13,12 @@
       <div class="offer-show-card">
         <h1><%= @offer.name %></h1>
         <p><%= @offer.description %></p>
-        <p class="price"><i class="fa-solid fa-coins" style="color: #000000;"></i><%= @offer.price %> *</p>
-        <p class="little_text"><i>* le prix n'est pas imaginaire</i></p>
-        <br>
-        <p class="offer-show-address"><%= @offer.address %></p>
+        <div class="d-flex justify-content-between ">
+        <p class="offer-show-address mb-0"><i class="fa-solid fa-location-dot fa-bounce icon-blue px-1"></i><%= @offer.address %></p>
+        <p class="price mb-0"><i class="fa-solid fa-coins icon-yellow fa-beat px-1"></i><%= @offer.price %></p>
+        </div>
       </div>
     </div>
-
     <div class="col-4">
       <div class="offer-show-card">
         <h5>Reservation</h5>
