@@ -20,6 +20,7 @@ class OffersController < ApplicationController
 
   def show
     @booking = Booking.new
+    @review = Review.new
     @offer = Offer.find(params[:id])
     @markers = [{
       lat: @offer.latitude,
@@ -57,11 +58,6 @@ class OffersController < ApplicationController
   def destroy
     @offer.destroy
     redirect_to myoffers_path, status: :see_other
-  end
-
-  def book
-    set_offer
-    redirect_to @offer, notice: "Offer successfully booked!"
   end
 
   private

@@ -50,6 +50,10 @@ body {
   margin-bottom: 0;
 }
 
+.no-bold {
+  font-weight: normal;
+}
+
 .offer-show-address {
   font-weight: 200;
   color: #333;
@@ -80,4 +84,8 @@ body {
   font-family: "MedievalSharp", Times, serif;
   font-weight: bold;
   color: darkslateblue;
+}
+
+.text-blue {
+  color: $blue;
 }
