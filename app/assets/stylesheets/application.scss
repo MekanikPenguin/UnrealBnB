@@ -1,3 +1,10 @@
+/*
+  REVIEW:
+
+  Eviter le code dans les fichiers root, c'est pas clean.
+  e.g. à ajouter dans un fichier "misc.scss" ou "global.scss"
+*/
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
