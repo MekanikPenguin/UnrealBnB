@@ -43,6 +43,10 @@ body {
   margin-bottom: 0;
 }
 
+.no-bold {
+  font-weight: normal;
+}
+
 .offer-show-address {
   font-weight: 200;
   color: #333;
@@ -67,4 +71,8 @@ body {
 
 .text-red {
   color: $red;
+}
+
+.text-blue {
+  color: $blue;
 }
