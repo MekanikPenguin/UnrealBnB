@@ -12,7 +12,7 @@
                         offer.url_image.strip
                       end %>" class="card-img-top" alt="<%= offer.name %>" style="height: 200px;">
           <% end %>
-        <div class="card-body">
+        <div class="card-body ">
           <h5 class="card-title"><strong><%= offer.name %></strong></h5>
           <p class="card-text mb-2"><%= offer.description %></p>
           <p class="card-text text-end"><i class="fa-solid fa-coins icon-yellow"></i> <%= offer.price.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse%></p>
@@ -21,7 +21,7 @@
               <p class="card-text mb-1">Demandes de réservation : <%= offer.bookings.pending.count %></p>
               <ul class="list-group list-group-flush">
                 <% offer.bookings.pending.each do |booking| %>
-                  <li class="list-group-item">
+                  <li class="booking-acceptation list-group-item">
                     <div class="d-flex justify-content-start modal-dialog modal-dialog-centered gap-2">
                       <%= render 'layouts/set_vava', vava: booking.user %>
                       <p class="card-text mt-0 p-0"><%= booking.user.username %></p>
