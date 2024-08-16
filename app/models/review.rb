@@ -4,5 +4,5 @@ class Review < ApplicationRecord
 
   #validations
   validates :rating, presence: true
-  validates :content, presence: true, length: { minimum: 20, message: "must be at least 20 characters long" }
+  validates :content, presence: true, length: { minimum: 10, message: "must be at least 20 characters long" }
 end
