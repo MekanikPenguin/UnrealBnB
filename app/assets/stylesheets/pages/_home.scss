@@ -1,3 +1,25 @@
+/*
+  REVIEW:
+
+  Quand vous utilisez Sass, utiliser du SCSS nesté, c'est plus lisible.
+  Par ex:
+
+  .navbar-lewagon {
+    justify-content: space-between;
+    background: white;
+
+    .navbar-collapse {
+      flex-grow: 0;
+    }
+
+    .navbar-brand {
+      img {
+        width: 80px;
+      }
+    }
+  }
+*/
+
 // Specific CSS for your home-page
 
 // Navbar

@@ -66,6 +66,9 @@ class OffersController < ApplicationController
 
   private
 
+  # REVIEW: Attentions aux scopes. Partout. Tout le temps. Forever. Dans toutes les apps.
+  # C'est vraiment pas beau ces methodes de setter pour les vars.
+  # Ils vous apprenent ça comme ça au Wagon?
   def set_offer
     @offer = Offer.find(params[:id])
   end

@@ -1,9 +1,11 @@
-import { Application } from "@hotwired/stimulus"
+// REVIEW: Le linting avec eslint sur le javascript c'est pas mal ;)
 
-const application = Application.start()
+import { Application } from "@hotwired/stimulus";
+
+const application = Application.start();
 
 // Configure Stimulus development experience
-application.debug = false
-window.Stimulus   = application
+application.debug = false;
+window.Stimulus   = application;
 
 export { application }

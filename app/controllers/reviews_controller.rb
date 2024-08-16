@@ -37,6 +37,9 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:content, :rating)
   end
 
+  # REVIEW:
+  # C'est vraiment pas beau ces methodes de setter pour les vars.
+  # Ils vous apprenent ça comme ça au Wagon?
   def set_review
     @review = Review.find(params[:id])
   end
