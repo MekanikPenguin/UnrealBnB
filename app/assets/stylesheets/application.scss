@@ -29,23 +29,10 @@ body {
   padding-top: 56px;
 }
 
-.navbar {
-  margin-bottom: 20px;
-}
-
-
-
 .flex-align {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-
-.map {
-  height: 400px;
-  background-position: center;
-  background-size: cover;
 }
 
 .margin-top-negative {
@@ -70,18 +57,14 @@ body {
   font-size: 20px;
 }
 
-.icon-yellow {
-  color: $yellow;
+.text-orange {
+  color: $orange;
 }
 
-.icon-blue {
-  color: $blue;
+.text-green {
+  color: $green;
 }
 
-.icon-blue-green {
-  color: $blue-green;
-}
-
-.index-button-blue-green {
-  border-radius: 15px;
+.text-red {
+  color: $red;
 }

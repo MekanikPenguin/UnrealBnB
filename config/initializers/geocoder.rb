@@ -9,7 +9,8 @@ Geocoder.configure(
   # https_proxy: nil,           # HTTPS proxy server (user:pass@host:port)
   # api_key: nil,               # API key for geocoding service
   # cache: nil,                 # cache object (must respond to #[], #[]=, and #del)
-
+  timeout: 10,
+  ip_lookup: :telize,
   # Exceptions that should not be rescued by default
   # (if you want to implement custom error handling);
   # supports SocketError and Timeout::Error
@@ -17,7 +18,7 @@ Geocoder.configure(
 
   # Calculation options
   # units: :mi,                 # :km for kilometers or :mi for miles
-  units: :km                    # Defaults to miles (:mi)
+  units: :km # Defaults to miles (:mi)
   # distances: :linear          # :spherical or :linear
 
   # Cache configuration
