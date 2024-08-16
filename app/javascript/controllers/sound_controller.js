@@ -17,4 +17,9 @@ export default class extends Controller {
     this.audio = new Audio("/yahaha.mp3");
     this.audio.play()
   }
+
+  playsoundLetsgo() {
+    this.audio = new Audio("/letsgo.mp3");
+    this.audio.play()
+  }
   }
