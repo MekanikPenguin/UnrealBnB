@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<div class="container mt-4" data-controller="sound">
   <h1 class="mb-4">Détails de vos offres</h1>
   <div class="d-flex flex-wrap">
     <% current_user.offers.each do |offer| %>
@@ -27,9 +27,9 @@
                       <p class="card-text mt-0 p-0"><%= booking.user.username %></p>
                     </div>
                     <p class="card-text">Du <%= booking.start_date %> au <%= booking.end_date %></p>
-                    <div class="d-flex justify-content-center p-2 gap-3">
-                      <%= button_to 'Accepter', accept_booking_path(booking), method: :patch, class: 'btn btn-success btn-sm rounded opacity-75' %>
-                      <%= button_to 'Refuser', reject_booking_path(booking), method: :patch, class: 'btn btn-danger btn-sm rounded opacity-75' %>
+                    <div class="d-flex justify-content-center p-2 gap-3" >
+                      <%= button_to 'Accepter', accept_booking_path(booking), method: :patch, class: 'btn btn-success btn-sm rounded opacity-75', data: { action: 'click->sound#playsoundValidation' } %>
+                      <%= button_to 'Refuser', reject_booking_path(booking), method: :patch, class: 'btn btn-danger btn-sm rounded opacity-75', data: { action: 'click->sound#playsoundYahaha' } %>
                     </div></li>
                 <% end %>
               </ul>
@@ -45,5 +45,5 @@
       </div>
     <% end %>
   </div>
-  <p class="w-100"><%= link_to "Ajouter une nouvelle location", new_offer_path, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0 mb-3 mt-2" %></p>
+  <p class="w-100"><%= link_to "Ajouter une nouvelle location", new_offer_path, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0 mb-3 mt-2", data: { action: 'click->sound#playsoundGotit' } %></p>
 </div>
