@@ -17,6 +17,16 @@
 @import "components/cards";
 @import "components/footer";
 
+body {
+  background-image: url('group.png');
+  // background-size: cover; /* L'image couvre toute la zone sans distorsion */
+  // background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image */
+  // background-attachment: fixed; /* Fixe l'image par rapport à la fenêtre */
+  padding-top: 56px;
+
+}
+
 h1 {
   font-size: 60px;
 }
@@ -25,9 +35,6 @@ h5 {
   font-size: 24px;
 }
 
-body {
-  padding-top: 56px;
-}
 
 .flex-align {
   display: flex;
