@@ -10,16 +10,24 @@
   <div class="row">
     <div class="col-8">
       <div class="offer-show-card">
-        <h1><%= @offer.name %></h1>
+        <div class="position-relative">
+          <h1><%= @offer.name %></h1>
+          <div class="position-absolute top-0 end-0">
+            <div class="d-flex align-items-center pt-2" style="font-size: 24px;">
+              <i class="fw-bold mx-2 fa-solid fa-star icon-yellow"></i>
+              <p class="mb-0" > 4.5 </p>
+            </div>
+          </div>
+        </div>
         <hr>
-        <div class="d-flex">
-        <%= render 'layouts/set_vava', vava: @offer.user %>
-        <p class="fw-bold mx-3 pt-2">Hôte: <%= @offer.user.username  %> </p>
+        <div class="d-flex mb-3">
+          <%= render 'layouts/set_vava', vava: @offer.user %>
+          <p class="fw-bold mx-3 pt-2"><%= @offer.user.username  %> </p>
         </div>
         <p><%= @offer.description %></p>
-        <div class="d-flex justify-content-between">
-        <p class="offer-show-address mb-0"><i class="fa-solid fa-location-dot fa-bounce icon-blue px-1"></i><%= @offer.address %></p>
-        <p class="price mb-0"><i class="fa-solid fa-coins icon-yellow fa-beat px-1"></i><%= @offer.price.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></p>
+        <div class="d-flex justify-content-between pt-3">
+          <p class="offer-show-address mb-0 text-blue"><i class="fa-solid fa-location-dot fa-bounce icon-blue px-2 mb-3"></i><%= @offer.address %></p>
+          <p class="price mb-0 no-bold"><i class="fa-solid fa-coins icon-yellow fa-beat px-2 mb-3"></i><%= @offer.price.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></p>
         </div>
       </div>
     </div>
@@ -30,14 +38,14 @@
           <%= simple_form_for [@offer, @booking] do |f| %>
             <%= f.input :start_date, input_html: {data: {controller:'datepicker', datepicker_target: "start"}, placeholder: "select dates"}, as: :string %>
             <%= f.input :end_date, input_html: {data: {controller:'datepicker', datepicker_target: "end"}, placeholder: "select dates"}, as: :string %>
-            <%= f.submit "Book", class: "btn btn-primary rounded" %>
+            <%= f.submit "Réserver", class: "btn btn-primary rounded" %>
           <% end %>
       </div>
     </div>
   </div>
-  <!-- Section des commentaires -->
-  <div class="overflow-auto m-3" style="height: 200px;">
-    <% @reviews.each do |review| %>
+<%# commentaires %>
+  <div class="overflow-auto mt-5" style="height: 200px;">
+    <% @reviews.each do | review | %>
       <div class="card mb-4 shadow-sm">
         <div class="card-body">
           <div class="d-flex align-items-center mb-2">
@@ -54,8 +62,8 @@
 
             <!-- Évaluation (rating) -->
             <div>
-              <span class="badge bg-primary">
-                <%= review.rating %> <i class="fas fa-star"></i> <!-- Étoile de note FontAwesome -->
+              <span class="badge <%= review.rating > 3 ? 'bg-success' : (review.rating >= 2 ? 'bg-warning' : 'bg-danger') %>">
+                <%= review.rating %> ★
               </span>
             </div>
           </div>
