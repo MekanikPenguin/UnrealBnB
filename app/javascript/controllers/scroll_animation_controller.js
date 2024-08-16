@@ -5,7 +5,7 @@ export default class extends Controller {
 
   connect() {
     this.observer = new IntersectionObserver(this.observeCards.bind(this), {
-      threshold: 0.1,
+      threshold: 0.05,
     });
 
     this.cardTargets.forEach((card, index) => {
