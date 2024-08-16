@@ -6,6 +6,7 @@
 // External libraries
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=MedievalSharp&family=Metamorphous&family=Modern+Antiqua&display=swap');
 
 // Mapbox
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
@@ -19,10 +20,16 @@
 
 h1 {
   font-size: 60px;
+  color: darkslateblue;
+}
+
+h2 {
+  color: darkslateblue;
 }
 
 h5 {
   font-size: 24px;
+  color:darkslateblue;
 }
 
 body {
@@ -67,4 +74,10 @@ body {
 
 .text-red {
   color: $red;
+}
+
+#logo {
+  font-family: "MedievalSharp", Times, serif;
+  font-weight: bold;
+  color: darkslateblue;
 }
