@@ -1,7 +1,7 @@
 <div class = "container mt-4">
-  <h1>Edit <%= @offer.name %></h1>
+  <h1 class="backgroundfont">Edit <%= @offer.name %></h1>
 
   <%= render "form", offer: @offer %>
   <hr>
-  <%= link_to "Back to Offers ", root_path  %>
+  <%= link_to "Back to Offers ", root_path, class: "btn btn-primary"  %>
 </div>

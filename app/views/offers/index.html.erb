@@ -1,5 +1,7 @@
 <div class= "container mt-4" data-controller="sound">
-  <h1 class="mb-4">Louez l’impossible, vivez l’extraordinaire.</h1>
+  <div class="title">
+    <h1 class="backgroundfont mb-4">Louez l’impossible, vivez l’extraordinaire</h1>
+  </div>
   <div class="d-flex flex-wrap" data-controller="scroll-animation">
     <% if @offers.present? %>
       <% @offers.each do |offer| %>
@@ -28,8 +30,8 @@
       <p>No offers available.</p>
     <% end %>
   </div>
-  <hr>
-  <h2> Explore with our map.</h2>
+  <br>
+  <h2 class="backgroundfont"> Explore with our map</h2>
   <br>
   <div style="width: 100%; height: 600px;"
     data-controller="map"

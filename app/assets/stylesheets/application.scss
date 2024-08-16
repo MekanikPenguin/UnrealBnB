@@ -18,6 +18,13 @@
 @import "components/cards";
 @import "components/footer";
 
+body {
+  background-image: url('pixabay.jpg');
+  background-size: cover; /* L'image couvre toute la zone sans distorsion */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image */
+  background-attachment: fixed; /* Fixe l'image par rapport à la fenêtre */
+}
 h1 {
   font-size: 60px;
   color: darkslateblue;
@@ -32,8 +39,12 @@ h5 {
   color:darkslateblue;
 }
 
-body {
-  padding-top: 56px;
+.backgroundfont {
+  text-align: center;
+  color: white !important;
+  font-weight: 800;
+  // -webkit-text-stroke: 0.5px white;
+  text-shadow: darkslateblue 2px 0 4px;
 }
 
 .flex-align {
