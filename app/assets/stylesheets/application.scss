@@ -6,6 +6,7 @@
 // External libraries
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=MedievalSharp&family=Metamorphous&family=Modern+Antiqua&display=swap');
 
 // Mapbox
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
@@ -18,23 +19,33 @@
 @import "components/footer";
 
 body {
-  background-image: url('group.png');
-  // background-size: cover; /* L'image couvre toute la zone sans distorsion */
-  // background-repeat: no-repeat; /* Évite la répétition */
+  background-image: url('pixabay.jpg');
+  background-size: cover; /* L'image couvre toute la zone sans distorsion */
+  background-repeat: no-repeat; /* Évite la répétition */
   background-position: center; /* Centre l'image */
-  // background-attachment: fixed; /* Fixe l'image par rapport à la fenêtre */
-  padding-top: 56px;
-
+  background-attachment: fixed; /* Fixe l'image par rapport à la fenêtre */
 }
-
 h1 {
   font-size: 60px;
+  color: darkslateblue;
+}
+
+h2 {
+  color: darkslateblue;
 }
 
 h5 {
   font-size: 24px;
+  color:darkslateblue;
 }
 
+.backgroundfont {
+  text-align: center;
+  color: white !important;
+  font-weight: 800;
+  // -webkit-text-stroke: 0.5px white;
+  text-shadow: darkslateblue 2px 0 4px;
+}
 
 .flex-align {
   display: flex;
@@ -50,6 +61,10 @@ h5 {
   margin-bottom: 0;
 }
 
+.no-bold {
+  font-weight: normal;
+}
+
 .offer-show-address {
   font-weight: 200;
   color: #333;
@@ -62,4 +77,26 @@ h5 {
 .price {
   font-weight: bold;
   font-size: 20px;
+}
+
+.text-orange {
+  color: $orange;
+}
+
+.text-green {
+  color: $green;
+}
+
+.text-red {
+  color: $red;
+}
+
+#logo {
+  font-family: "MedievalSharp", Times, serif;
+  font-weight: bold;
+  color: darkslateblue;
+}
+
+.text-blue {
+  color: $blue;
 }

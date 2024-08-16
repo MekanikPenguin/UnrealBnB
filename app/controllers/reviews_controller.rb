@@ -1,19 +1,18 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [:destroy]
 
   def create
     @user = current_user
     @offer = Offer.find(params[:offer_id])
-    @review = Review.new(review_params)  # Utiliser `Review` avec une majuscule
+    @review = Review.new(review_params)
     @review.user = @user
     @review.offer = @offer
-
     if @review.save
-      if @offer.rating == nil
-        # Calculer la nouvelle note avant d'incrémenter le nombre de reviews
-        new_rating = ((@offer.rating * @offer.reviews.count) + @review.rating) / (@offer.reviews.count + 1)
-      else
+      # Si l'offre n'a pas encore de note (première review)
+      if @offer.rating.nil?
         new_rating = @review.rating
+      else
+        # Calculer la nouvelle note moyenne
+        new_rating = ((@offer.rating * @offer.reviews.count) + @review.rating) / (@offer.reviews.count + 1)
       end
 
       # Mettre à jour la colonne rating de l'offre
@@ -35,9 +34,5 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:content, :rating)
-  end
-
-  def set_review
-    @review = Review.find(params[:id])
   end
 end

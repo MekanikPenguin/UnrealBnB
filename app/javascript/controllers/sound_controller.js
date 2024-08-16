@@ -1,16 +1,25 @@
-// import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static values = { correct: String }
-    playsound() {
-        this.audio = new Audio("home-audio.mp3");
-        this.audio.play()
 
-        // Attempt to play the audio after a brief delay
-        // setTimeout(() => {
-        //   this.audio.play().catch((error) => {
-        //     console.error("Audio playback failed:", error);
-        //   });
-        // }, 1000); // Adjust the delay if necessary
+  playsoundValidation() {
+        this.audio = new Audio("/effect-sound.mp3");
+        this.audio.play()
     }
+
+  playsoundGotit() {
+    this.audio = new Audio("/gotit.mp3");
+    this.audio.play()
+  }
+
+  playsoundYahaha() {
+    this.audio = new Audio("/yahaha.mp3");
+    this.audio.play()
+  }
+
+  playsoundLetsgo() {
+    this.audio = new Audio("/letsgo.mp3");
+    this.audio.play()
+  }
   }

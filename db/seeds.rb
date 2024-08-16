@@ -127,5 +127,15 @@ Review.create(content: "Le palais est rempli de mystères et de créatures intri
 Review.create(content: "Asgard est époustouflant ! Les défis sont grands et les créatures sont redoutables. Un véritable terrain de chasse pour un sorceleur.", rating: 5, user: geralt, offer: asgard)
 Review.create(content: "Novigrad est vivante et pleine de surprises. Une ville vibrante avec des défis intéressants, même si le chaos peut être un peu écrasant.", rating: 4, user: geralt, offer: novigrad)
 
+#recalculating ratings for offers
+puts "Giving accurate ratings to imaginary places..."
 
+poudlard.update(rating: poudlard.reviews.sum(:rating).to_f / poudlard.reviews.count)
+chateau_peach.update(rating: chateau_peach.reviews.sum(:rating).to_f / chateau_peach.reviews.count)
+donjon_rouge.update(rating: donjon_rouge.reviews.sum(:rating).to_f / donjon_rouge.reviews.count)
+cul.update(rating: cul.reviews.sum(:rating).to_f / cul.reviews.count)
+marais.update(rating: marais.reviews.sum(:rating).to_f / marais.reviews.count)
+palais.update(rating: palais.reviews.sum(:rating).to_f / palais.reviews.count)
+asgard.update(rating: asgard.reviews.sum(:rating).to_f / asgard.reviews.count)
+novigrad.update(rating: novigrad.reviews.sum(:rating).to_f / novigrad.reviews.count)
 puts "Yahhoouuu!"
